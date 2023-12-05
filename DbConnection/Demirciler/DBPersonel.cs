@@ -14,8 +14,26 @@ namespace Projects.DbConnection.Business.MSSQL
             {
                 return db.ExecuteReader<Personel>($"SELECT * FROM Personel").ToList();
             }
+
+
         }
 
-        
+        public ResultStatus insert_Personel(Personel item)
+        {
+            using (var db = GetDB())
+            {
+                return db.ExecuteInsert<Personel>(item);
+            }
+        }
+
+        public ResultStatus delete_Personel(Personel item)
+        {
+            using (var db = GetDB())
+            {
+                return db.ExecuteDelete<Personel>(item);
+            }
+        }
+
+
     }
 }
