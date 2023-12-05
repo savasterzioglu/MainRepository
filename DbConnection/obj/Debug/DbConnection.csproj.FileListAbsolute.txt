@@ -1,0 +1,9 @@
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Demirciler DataBase\Projects\DbConnection\obj\Debug\DbConnection.csprojResolveAssemblyReference.cache
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Demirciler DataBase\Projects\DbConnection\bin\Debug\DbConnection.pdb
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Demirciler DataBase\Projects\DbConnection\obj\Debug\DbConnection.dll
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Demirciler DataBase\Projects\DbConnection\obj\Debug\DbConnection.pdb
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Projects\DbConnection\obj\Debug\DbConnection.csprojResolveAssemblyReference.cache
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Projects\DbConnection\obj\Debug\DbConnection.dll
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Projects\DbConnection\obj\Debug\DbConnection.pdb
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Projects\DbConnection\bin\Debug\DbConnection.dll
+C:\Users\BybasePC.DESKTOP-R4UC6PQ\Source\Workspaces\Projects\DbConnection\bin\Debug\DbConnection.pdb
