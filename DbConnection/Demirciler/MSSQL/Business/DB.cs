@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
-namespace DbConnection.Business.MSSQL
+namespace Projects.DbConnection.Business.MSSQL
 {
 	public class Database : IDisposable
 	{

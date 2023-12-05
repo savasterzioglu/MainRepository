@@ -1,4 +1,4 @@
-﻿namespace DbConnection.Business.MSSQL
+﻿namespace Projects.DbConnection.Business.MSSQL
 {
     public partial class DemircilerDB
     {

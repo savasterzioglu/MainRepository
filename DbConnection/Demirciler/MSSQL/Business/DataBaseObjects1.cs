@@ -2,7 +2,7 @@
  
 
 using System;
-namespace DbConnection.Business.MSSQL
+namespace Projects.DbConnection.Business.MSSQL
 {
 	    public class dik_islem
     {

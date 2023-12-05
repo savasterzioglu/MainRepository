@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConnection", "DbConnection\DbConnection.csproj", "{0A611E01-CDF1-40DF-BDDC-962F0078EEBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.DbConnection", "DbConnection\Projects.DbConnection.csproj", "{0A611E01-CDF1-40DF-BDDC-962F0078EEBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demirciler", "Demirciler\Demirciler.csproj", "{8FE6C970-AE77-4861-8052-4B8F3C0D3186}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Demirciler", "Demirciler\Projects.Demirciler.csproj", "{8FE6C970-AE77-4861-8052-4B8F3C0D3186}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

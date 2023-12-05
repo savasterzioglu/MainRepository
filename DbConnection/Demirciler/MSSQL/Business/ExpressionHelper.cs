@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DbConnection.Data.MSSQL.Business
+namespace Projects.DbConnection.Data.MSSQL.Business
 {
     public class ExpressionHelper
     {
