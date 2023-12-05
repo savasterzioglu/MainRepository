@@ -8,8 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DBConnection.Business.MSSQL;
-using DBConnection.Business;
+using Projects.DbConnection.Business.MSSQL;
+using Projects.DbConnection.Business;
 
 namespace Demirciler
 {

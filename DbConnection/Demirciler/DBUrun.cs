@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using DbConnection.Business;
-using DbConnection.Data.MSSQL.Business;
 
 
-namespace DbConnection.Business.MSSQL
+namespace Projects.DbConnection.Business.MSSQL
 {
     public partial class DemircilerDB
     {

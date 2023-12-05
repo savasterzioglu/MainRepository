@@ -3,7 +3,7 @@ using System.Linq;
 using Projects.DbConnection.Business.MSSQL;
 
 
-namespace DbConnection.Business.MSSQL
+namespace Projects.DbConnection.Business.MSSQL
 {
     public partial class DemircilerDB
     {
