@@ -14,5 +14,28 @@ namespace Projects.DbConnection.Business.MSSQL
                 return db.ExecuteReader<Sabit_Parametreler>($"Select * From Sabit_Parametreler").ToList();
             }
         }
+        public ResultStatus Update_Sabit_Parametreler(Sabit_Parametreler item)
+        {
+            using (var db = GetDB())
+            {
+                return db.ExecuteUpdate<Sabit_Parametreler>(item);
+            }
+        }
+
+        public ResultStatus insert_Sabit_Parametreler(Sabit_Parametreler item)
+        {
+            using (var db = GetDB())
+            {
+                return db.ExecuteInsert<Sabit_Parametreler>(item);
+            }
+        }
+
+        public ResultStatus delete_Sabit_Parametreler(Sabit_Parametreler item)
+        {
+            using (var db = GetDB())
+            {
+                return db.ExecuteDelete<Sabit_Parametreler>(item);
+            }
+        }
     }
 }
