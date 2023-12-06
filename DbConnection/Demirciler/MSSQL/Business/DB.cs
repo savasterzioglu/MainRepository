@@ -322,7 +322,7 @@ namespace Projects.DbConnection.Business.MSSQL
 			foreach (var p in parametre.GetType().GetProperties().Where(p => p.GetValue(parametre, null) != null))
 			{
 				if (string.IsNullOrEmpty(p.GetValue(parametre, null).ToString().Trim())) continue;
-				if (new string[] { "intId", "intid", "IntId", "Intid" }.Contains(p.Name)) continue;
+				if (new string[] { "intId", "intid", "IntId", "Intid","id" }.Contains(p.Name)) continue;
 				//if (p.Name == "id") continue;
 				parametrename += "," + p.Name;
 				parametrevalue += ",@" + p.Name;

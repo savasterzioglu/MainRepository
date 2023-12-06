@@ -409,6 +409,13 @@ namespace Projects.DbConnection.Business.MSSQL
         public string DESCRIPTION { get; set;}
         public int ID { get; set;}
     }
+
+    public class test3
+    {
+        public int id { get; set; }
+        public string ad { get; set; }
+        public string soyad { get; set; }
+    }
     public class test2
     {
         public string DESCRIPTION { get; set;}
@@ -416,6 +423,7 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class Personel
     {
+        public int id { get; set; }
         public int Kimlik { get; set;}
         public string P_ad { get; set;}
         public string p_adres { get; set;}

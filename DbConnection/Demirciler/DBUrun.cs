@@ -21,7 +21,7 @@ namespace Projects.DbConnection.Business.MSSQL
             }
         }
 
-        public ResultStatus insert_urunl(urun item)
+        public ResultStatus insert_urun(urun item)
         {
             using (var db = GetDB())
             {

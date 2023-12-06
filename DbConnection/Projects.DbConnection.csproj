@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Demirciler\BaseModel.cs" />
+    <Compile Include="Demirciler\DBtest3.cs" />
     <Compile Include="Demirciler\MSSQL\Business\DataBaseObjects1.cs" />
     <Compile Include="Demirciler\DBSabit_Parametreler.cs" />
     <Compile Include="Demirciler\DBUrun.cs" />

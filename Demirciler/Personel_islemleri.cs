@@ -40,7 +40,10 @@ namespace Demirciler
         void GridDoldur()
         {
             gridControl1.DataSource = db.GetPersonel().ToList();
+            gridView1.Columns["id"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
             gridView1.BestFitColumns();
+            gridControl2.DataSource = db.Gettest3().ToList();
+            gridView2.BestFitColumns();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -49,23 +52,44 @@ namespace Demirciler
 
             var item = new Personel
             {
-                P_ad = "vstd1",
-                P_soyad = "vstd3",
-                P_ucret = 20000,                
-                p_adres = "vstd2",
-                p_telefon = 555555,
-                Kimlik = 2,
-                p_dtarihi = "" ,
-                P_id = 11,
+                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id")),
             };
+
+            MessageBox.Show(gridView1.GetFocusedRowCellValue("id").ToString());
+            //var item2 = new test3
+            //{
+             //  id=2,
+                
+            //};
            // MessageBox.Show(gridView1.GetFocusedRowCellValue("P_ad").ToString());
            var result = db.delete_Personel(item);
+            GridDoldur();
+            //var result2 = db.delete_test3(item2);
+            //if (result.result == true)
+                //{
+              //  MessageBox.Show("silindi");
+            //}
+          //  else { MessageBox.Show("silinmedi"); }
+            
+            //if (result2.result == true)
+            //{
+             // MessageBox.Show("silindi");
 
-            if (result.result == true)
-                {
-                MessageBox.Show("silindi");
-            }
-            else { MessageBox.Show("silinmedi"); }
+//           }
+  //         else { MessageBox.Show("silinmedi"); }
+
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            var item3 = new test3
+            {
+                ad = "osman",
+                soyad = "vıdıvıdı",
+            };
+
+          var result =   db.insert_test3(item3);
+
         }
     }
 }

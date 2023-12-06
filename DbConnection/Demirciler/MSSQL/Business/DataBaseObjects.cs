@@ -425,6 +425,12 @@ namespace DbConnect.Business.MSSQL
         public int? p_telefon { get; set;}
         public decimal P_ucret { get; set;}
     }
+    public class test3
+    {
+        public string ad { get; set;}
+        public int id { get; set;}
+        public string soyad { get; set;}
+    }
     public class Deneme
     {
         public string vc { get; set;}
