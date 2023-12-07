@@ -460,8 +460,60 @@ namespace Projects.DbConnection.Business.MSSQL
 				result = false
 			};
 		}
+        public ResultStatus ExecuteUpdateByID<T>(T parametre)
+        {
+            string id = "";
+            string parametrename = "";
+            List<_Param> param = new List<_Param>();
+            foreach (var p in parametre.GetType().GetProperties().Where(p => p.GetValue(parametre, null) != null))
+            {
+                if (string.IsNullOrEmpty(p.GetValue(parametre, null).ToString().Trim())) continue;
+                if (p.Name == "id")
+                {
+                    id = p.GetValue(parametre, null).ToString();
+                    continue;
+                }
+                if (p.Name == "Intid")
+                {
+                    continue;
+                }
+                else
+                {
+                    parametrename += "," + p.Name + "=@" + p.Name;
+                    param.Add(new _Param { name = "@" + p.Name, value = p.GetValue(parametre, null) });
+                }
+            }
+            parametrename = parametrename.Substring(1);
 
-		public ResultStatus ExecuteDelete<T>(T parametre)
+            if (parametrename.Length > 2)
+            {
+                var sql = string.Format("Update {0} Set {1} where id = '{2}' ", parametre.GetType().Name, parametrename, id);
+                try
+                {
+                    var tr = PrepareCommand(sql, param.ToArray()).ExecuteNonQuery();
+                    return new ResultStatus
+                    {
+                        message = tr.ToString(),
+                        result = true
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new ResultStatus
+                    {
+                        message = "UnSuccessfull - " + ex.ToString(),
+                        result = false
+                    };
+                }
+            }
+            return new ResultStatus
+            {
+                message = "UnSuccessfull",
+                result = false
+            };
+        }
+
+        public ResultStatus ExecuteDelete<T>(T parametre)
 		{
 			string id = "";
 			List<_Param> param = new List<_Param>();

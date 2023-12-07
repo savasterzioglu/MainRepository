@@ -13,11 +13,13 @@ namespace Projects.DbConnection.Business.MSSQL
                 return db.ExecuteReader<test3>($"Select * From test3").ToList();
             }
         }
+        
         public ResultStatus Update_test3(test3 item)
         {
             using (var db = GetDB())
             {
-                return db.ExecuteUpdate<test3>(item);
+                //identitiy sütunu olan tablolar için bu şekilde kullan
+                return db.ExecuteUpdateByID<test3>(item);
             }
         }
 

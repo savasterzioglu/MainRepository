@@ -82,13 +82,16 @@ namespace Demirciler
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(gridView2.GetFocusedRowCellValue("id").ToString());
             var item3 = new test3
             {
+                id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("id")),
                 ad = "osman",
-                soyad = "vıdıvıdı",
+                soyad = "zamazingo",
             };
 
-          var result =   db.insert_test3(item3);
+          var result5 =   db.Update_test3(item3);
+
 
         }
     }
