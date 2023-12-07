@@ -224,12 +224,12 @@ namespace Projects.DbConnection.Business.MSSQL
     public class Puantaj
     {
         public int? c_sure { get; set;}
-        public DateTime? cikis_zaman { get; set;}
+        public string cikis_zaman { get; set;}
         public string devamsizlik { get; set;}
-        public DateTime? giris_zaman { get; set;}
+        public string giris_zaman { get; set;}
         public int? mesai_sure { get; set;}
         public int? p_id { get; set;}
-        public DateTime tarih { get; set;}
+        public string tarih { get; set;}
         public decimal? ucret { get; set;}
     }
     public class Sabit_Parametreler
