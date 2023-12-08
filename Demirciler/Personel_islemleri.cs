@@ -30,7 +30,7 @@ namespace Demirciler
                 P_soyad = textEdit2.Text,
                 P_ucret = Convert.ToInt32(textEdit3.Text),
                 p_adres = textEdit4.Text,
-                p_telefon = Convert.ToInt32(textEdit5.Text),           
+                p_telefon = textEdit5.Text,           
             };
 
             var result = db.insert_Personel(item);

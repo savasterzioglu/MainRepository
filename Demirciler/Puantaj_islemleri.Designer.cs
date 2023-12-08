@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.isgunu = new DevExpress.XtraEditors.TextEdit();
             this.calisilangun = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -53,7 +52,6 @@
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.dtpicker2 = new DevExpress.XtraEditors.DateEdit();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -74,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
@@ -222,12 +219,11 @@
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsBehavior.ReadOnly = true;
             this.gridView2.OptionsSelection.UseIndicatorForSelection = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.OptionsView.ShowIndicator = false;
             // 
             // textEdit1
             // 
-            this.behaviorManager1.SetBehaviors(this.textEdit1, new DevExpress.Utils.Behaviors.Behavior[] {
-            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.Common.FileIconBehavior.Create(typeof(DevExpress.XtraEditors.Behaviors.FileIconBehaviorSourceForTextEdit), DevExpress.Utils.Behaviors.Common.FileIconSize.Small, null, null)))});
             this.textEdit1.Location = new System.Drawing.Point(372, 12);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
@@ -415,7 +411,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -449,7 +444,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.DateEdit dtpicker2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;

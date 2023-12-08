@@ -221,16 +221,17 @@ namespace Projects.DbConnection.Business.MSSQL
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
     }
-    public class Puantaj
+    public class Puantaj       
     {
-        public int? c_sure { get; set;}
-        public string cikis_zaman { get; set;}
+        public int? id { get; set; }
+        public int? p_id { get; set; }
+        public string giris_zaman { get; set; }
+        public string cikis_zaman { get; set; }
+        public int? mesai_sure { get; set; }
+        public string tarih { get; set; }
+        public string c_sure { get; set;}
+        public decimal? ucret { get; set; }
         public string devamsizlik { get; set;}
-        public string giris_zaman { get; set;}
-        public int? mesai_sure { get; set;}
-        public int? p_id { get; set;}
-        public string tarih { get; set;}
-        public decimal? ucret { get; set;}
     }
     public class Sabit_Parametreler
     {
@@ -430,7 +431,7 @@ namespace Projects.DbConnection.Business.MSSQL
         public string p_dtarihi { get; set;}
         public int? P_id { get; set;}
         public string P_soyad { get; set;}
-        public int? p_telefon { get; set;}
+        public string p_telefon { get; set;}
         public decimal P_ucret { get; set;}
     }
     public class Deneme

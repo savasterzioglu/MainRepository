@@ -65,7 +65,11 @@ namespace Demirciler
             //MessageBox.Show(gridView2.GetFocusedRowCellValue("P_ad").ToString());
             textad.Text = gridView2.GetFocusedRowCellValue("P_ad").ToString();
             textsoyad.Text = gridView2.GetFocusedRowCellValue("P_soyad").ToString();
-            // MessageBox.Show("asas");
+            int id=0;
+            id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id"));
+            gridControl1.DataSource = db.GetPuantaj().Where(a=> a.p_id == id && a.tarih >= "01.07.2020");
+            //gridView1.BestFitColumns();
+             MessageBox.Show(id.ToString());
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -84,5 +88,6 @@ namespace Demirciler
             gridControl1.DataSource = db.GetPuantaj().ToList();
             gridView1.BestFitColumns();
         }
+
     }
 }
