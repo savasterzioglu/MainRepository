@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.DbConnection", "Db
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Demirciler", "Demirciler\Projects.Demirciler.csproj", "{8FE6C970-AE77-4861-8052-4B8F3C0D3186}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbYedek", "DbYedek", "{E1E586E8-A526-47CD-840F-C7BDD3993BA2}"
+	ProjectSection(SolutionItems) = preProject
+		F:\Demirciler_yedek.mdf = F:\Demirciler_yedek.mdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
