@@ -183,11 +183,13 @@
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView1
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
@@ -253,6 +255,7 @@
             this.textEdit2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit2.Size = new System.Drawing.Size(66, 20);
             this.textEdit2.TabIndex = 17;
+            this.textEdit2.TextChanged += new System.EventHandler(this.textEdit2_TextChanged);
             // 
             // labelControl6
             // 
@@ -294,16 +297,13 @@
             // 
             // textEdit3
             // 
+            this.textEdit3.Enabled = false;
             this.textEdit3.Location = new System.Drawing.Point(509, 38);
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
-            this.textEdit3.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.textEdit3.Properties.MaskSettings.Set("mask", "t");
-            this.textEdit3.Properties.MaskSettings.Set("culture", "tr");
-            this.textEdit3.Properties.MaskSettings.Set("useAdvancingCaret", true);
-            this.textEdit3.Properties.MaskSettings.Set("spinWithCarry", true);
+            this.textEdit3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEdit3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEdit3.Properties.ReadOnly = true;
             this.textEdit3.Properties.UseMaskAsDisplayFormat = true;
-            this.textEdit3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit3.Size = new System.Drawing.Size(66, 20);
             this.textEdit3.TabIndex = 22;
             // 
@@ -344,6 +344,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
             this.simpleButton2.TabIndex = 26;
             this.simpleButton2.Text = "Kaydet";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton3
             // 
@@ -352,6 +353,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(75, 23);
             this.simpleButton3.TabIndex = 27;
             this.simpleButton3.Text = "Güncelle";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton4
             // 

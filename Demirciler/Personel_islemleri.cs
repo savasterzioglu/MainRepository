@@ -44,6 +44,7 @@ namespace Demirciler
             gridView1.BestFitColumns();
             gridControl2.DataSource = db.Gettest3().ToList();
             gridView2.BestFitColumns();
+            
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
