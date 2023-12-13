@@ -19,6 +19,8 @@ namespace Demirciler
         public DemircilerDB db = new DemircilerDB();
         public decimal maas = 0;
 
+        public static string[] holidays =new string[31];
+
         public Puantaj_islemleri()
         {
             InitializeComponent();
@@ -38,8 +40,14 @@ namespace Demirciler
 
             for (int i = 1; i <= is_gunu; i++)
             {
-                if (new DateTime(dt.Year, dt.Month, i).DayOfWeek.ToString() == "Sunday" || new DateTime(dt.Year, dt.Month, i).DayOfWeek.ToString() == "Saturday")
+                //int j = 0;
+                holidays[i] = new DateTime(dt.Year, dt.Month, i).DayOfWeek.ToString();
+                //MessageBox.Show(holidays[i]);
+
+                if (holidays[i] == "Sunday" || holidays[i] == "Saturday")
                 {
+                    //j++;
+                    //holidays[j] = i;
                     h_sonu++;
                 }
             }
@@ -211,6 +219,38 @@ namespace Demirciler
             //return (Convert.ToDateTime(dt2)-Convert.ToDateTime(dt1)- (new TimeSpan(10,0,0))).ToString();
             return (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text) - new TimeSpan(10, 0, 0)).TotalHours.ToString();
 
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            if (isgunu.Text != "" && gridView2.GetFocusedRowCellValue("P_id").ToString() != "")
+            {
+                for (int i=1; i<= Convert.ToInt32(isgunu.Text); i++)
+                {
+                    DateTime dt = new DateTime(2023,12,i);
+                    var item = new Puantaj
+                    {
+                        p_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id")),
+                        giris_zaman = "07:30:00",
+                        cikis_zaman = "17:30:30",
+                        tarih = dt.ToShortDateString(),
+                        devamsizlik = "",
+                        mesai_sure =0,
+                        c_sure= "10:00:00",
+                        ucret= maas/Convert.ToInt32(isgunu.Text),  
+                    };
+                    if (holidays[i] == "Sunday" || holidays[i] == "Saturday")
+                    {
+                        item.devamsizlik = "h.sonu";
+                    }
+
+                    var result = db.insert_Puantaj(item);
+                }
+            };
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
         }
     }
 }
