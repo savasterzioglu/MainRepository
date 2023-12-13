@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using Projects.DbConnection.Business.MSSQL;
-
+using Nager.Holiday;
 
 namespace Demirciler
 {
@@ -19,7 +19,7 @@ namespace Demirciler
         public DemircilerDB db = new DemircilerDB();
         public decimal maas = 0;
 
-        public static string[] holidays =new string[31];
+        public static string[] holidays =new string[32];
 
         public Puantaj_islemleri()
         {
@@ -155,7 +155,7 @@ namespace Demirciler
 
         private void textEdit2_TextChanged(object sender, EventArgs e)
         {
-            textEdit3.Text = mesai_Hesapla(textEdit1.Text,textEdit2.Text);
+            textEdit3.Text = mesai_Hesapla(textEdit2.Text,textEdit1.Text);
         }
 
         void ControlActive(int a)
@@ -197,11 +197,39 @@ namespace Demirciler
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            var item = new Puantaj
+            try
             {
+                TimeSpan ts2 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text) - (new TimeSpan(10, 0, 0)));
+                TimeSpan ts1 = new TimeSpan(10, 0, 0);
 
-            };
-            var result = db.Update_Puantaj(item);
+                if (ts2.TotalHours >= 0)
+                {
+                    ts1 = new TimeSpan(10, 0, 0);
+
+                }
+                else
+                {
+                    ts1 = ts2.Add(new TimeSpan(10, 0, 0));
+                    ts2 = new TimeSpan(0, 0, 0);
+                }
+
+                var item = new Puantaj
+                {
+                    id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id")),
+                    giris_zaman = textEdit1.Text,
+                    cikis_zaman = textEdit2.Text,
+                    devamsizlik = comboBoxEdit1.Text,
+                    c_sure = ts1.Add(ts2).ToString(),
+                    mesai_sure = ts2.TotalHours,
+                    ucret = UcretHesapla(Convert.ToDecimal(ts1.TotalHours), Convert.ToDecimal(ts2.TotalHours)),
+                    p_id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("P_id")),
+                };
+                var result = db.Update_Puantaj(item);
+                // MessageBox.Show(UcretHesapla(Convert.ToDecimal(ts1.TotalHours), Convert.ToDecimal(ts2.TotalHours)).ToString());
+                //MessageBox.Show(maas.ToString());
+            }
+            catch { MessageBox.Show("Lütfen verileri eksiksiz ve doğru girin, Personel tablosundan seçim yaptığınıza emin olun."); }
+
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -210,7 +238,9 @@ namespace Demirciler
             textEdit2.Text = gridView1.GetFocusedRowCellValue("cikis_zaman").ToString();
             comboBoxEdit1.Text = gridView1.GetFocusedRowCellValue("devamsizlik").ToString();
             textEdit3.Text = mesai_Hesapla(textEdit2.Text, textEdit1.Text);
-            MessageBox.Show(mesai_Hesapla(textEdit2.Text, textEdit1.Text));
+            dtpicker2.Text = gridView1.GetFocusedRowCellValue("tarih").ToString();
+            
+            //MessageBox.Show(mesai_Hesapla(textEdit2.Text, textEdit1.Text));
         }
 
 
@@ -227,14 +257,16 @@ namespace Demirciler
             {
                 for (int i=1; i<= Convert.ToInt32(isgunu.Text); i++)
                 {
-                    DateTime dt = new DateTime(2023,12,i);
-                    var item = new Puantaj
+                    DateTime dt = new DateTime(2023,dtpicker1.DateTime.Month,i);
+                    if (db.GetPuantaj().Where(a => a.tarih == dt.ToShortDateString()).Count() == 0)
+                    {
+                        var item = new Puantaj
                     {
                         p_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id")),
                         giris_zaman = "07:30:00",
                         cikis_zaman = "17:30:30",
                         tarih = dt.ToShortDateString(),
-                        devamsizlik = "",
+                        devamsizlik = " ",
                         mesai_sure =0,
                         c_sure= "10:00:00",
                         ucret= maas/Convert.ToInt32(isgunu.Text),  
@@ -244,13 +276,20 @@ namespace Demirciler
                         item.devamsizlik = "h.sonu";
                     }
 
+                   // var item2 = new Puantaj
+                    
                     var result = db.insert_Puantaj(item);
+                    }
+                    else { MessageBox.Show("Seçili personelin" + dt.ToShortDateString() + "tarihinde kaydı mevcuttur."); }
                 }
+                gridView1.RefreshData();
+                gridControl1.Refresh();
             };
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
+            //using var holidayClient = new HolidayClient();
         }
     }
 }
