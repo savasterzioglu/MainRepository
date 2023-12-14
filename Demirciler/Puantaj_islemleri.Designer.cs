@@ -291,9 +291,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.DropDownRows = 3;
             this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            "-",
             "Raporlu",
             "İzinli",
             "Devamsız"});
+            this.comboBoxEdit1.Properties.NullText = "-";
             this.comboBoxEdit1.Size = new System.Drawing.Size(66, 20);
             this.comboBoxEdit1.TabIndex = 21;
             // 

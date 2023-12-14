@@ -82,6 +82,11 @@ namespace Demirciler
             gridControl1.DataSource = db.GetPuantaj().Where(a=> a.p_id == id &&  Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())
                                                                   && Convert.ToDateTime(a.tarih) < Convert.ToDateTime(dt1.AddMonths(1).ToShortDateString()));
             ControlActive(1);
+
+            //foreach (DataGridViewRow row in gridView1.rows)
+           // {
+                //More code here
+           // }
             //var dt2 = new DateTime(dtpicker1.DateTime.AddMonths(1));
             //gridView1.BestFitColumns();
         }
@@ -264,9 +269,9 @@ namespace Demirciler
                     {
                         p_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id")),
                         giris_zaman = "07:30:00",
-                        cikis_zaman = "17:30:30",
+                        cikis_zaman = "17:30:00",
                         tarih = dt.ToShortDateString(),
-                        devamsizlik = " ",
+                        devamsizlik = "-",
                         mesai_sure =0,
                         c_sure= "10:00:00",
                         ucret= maas/Convert.ToInt32(isgunu.Text),  
@@ -282,8 +287,7 @@ namespace Demirciler
                     }
                     else { MessageBox.Show("Seçili personelin" + dt.ToShortDateString() + "tarihinde kaydı mevcuttur."); }
                 }
-                gridView1.RefreshData();
-                gridControl1.Refresh();
+                gridControl2_DoubleClick(sender,e);
             };
         }
 
