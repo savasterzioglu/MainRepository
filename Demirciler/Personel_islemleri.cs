@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using Projects.DbConnection.Business.MSSQL;
 using Projects.DbConnection.Business;
 using System.Runtime.InteropServices;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid;
 
 namespace Demirciler
 {
@@ -45,14 +47,11 @@ namespace Demirciler
             gridControl1.DataSource = db.GetPersonel().ToList();
             gridView1.Columns["id"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
             gridView1.BestFitColumns();
-            //gridControl2.DataSource = db.Gettest3().ToList();
-           // gridView2.BestFitColumns();
             
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            //DataRow row = gridView1.GetRow(gridView1.GetRowHandle());
 
             var item = new Personel
             {
@@ -60,42 +59,14 @@ namespace Demirciler
             };
 
             MessageBox.Show(gridView1.GetFocusedRowCellValue("id").ToString());
-            //var item2 = new test3
-            //{
-             //  id=2,
-                
-            //};
-           // MessageBox.Show(gridView1.GetFocusedRowCellValue("P_ad").ToString());
            var result = db.delete_Personel(item);
             GridDoldur();
-            //var result2 = db.delete_test3(item2);
-            //if (result.result == true)
-                //{
-              //  MessageBox.Show("silindi");
-            //}
-          //  else { MessageBox.Show("silinmedi"); }
-            
-            //if (result2.result == true)
-            //{
-             // MessageBox.Show("silindi");
-
-//           }
-  //         else { MessageBox.Show("silinmedi"); }
 
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             MessageBox.Show(gridView1.GetFocusedRowCellValue("id").ToString());
-            //var item3 = new test3
-            //{
-            //    id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("id")),
-            //     ad = textEdit1.Text,
-            //    soyad = textEdit2.Text,
-
-            //};
-
-            //var result5 =   db.Update_test3(item3);
 
             var item = new Personel
             {
@@ -120,6 +91,39 @@ namespace Demirciler
             textEdit5.Text = gridView1.GetFocusedRowCellValue("p_telefon").ToString();
             textEdit6.Text = gridView1.GetFocusedRowCellValue("P_id").ToString(); ;
             dateEdit1.Text = gridView1.GetFocusedRowCellValue("p_dtarihi").ToString();
+
+            GridFormatRule GFR = new GridFormatRule();
+            GFR.Column = gridView1.Columns["P_id"];
+            gridView1.FormatRules["Format0"].Column = GFR.Column;
+            // FormatConditionRuleValue FCR = new FormatConditionRuleValue();
+            // FCR.PredefinedName = "Red Bold Text";
+            // FCR.Condition = FormatCondition.Greater;
+            // FCR.Value1 = 1;
+            // GFR.Rule = FCR;
+            //  GFR.ApplyToRow = false;
+            // gridView1.FormatRules.Add(GFR);
+        }
+        private void gridView1_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            int quantity = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, "P_id"));
+
+            if (quantity > 1)
+            {
+                e.Appearance.BackColor = Color.Red;
+            }
+            else
+            {
+                e.Appearance.BackColor = Color.LightGreen;
+            }
+
+            //Override any other formatting  
+            e.HighPriority = true;
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+            //textEdit7.Text = dateEdit1.DateTime.GetDateTimeFormats("dd/mm/yyyy").ToString();
         }
     }
 }

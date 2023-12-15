@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using System.Globalization;
 using Projects.DbConnection.Business.MSSQL;
 using Nager.Holiday;
+using DevExpress.XtraGrid;
+
 
 namespace Demirciler
 {
@@ -82,13 +84,11 @@ namespace Demirciler
             gridControl1.DataSource = db.GetPuantaj().Where(a=> a.p_id == id &&  Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())
                                                                   && Convert.ToDateTime(a.tarih) < Convert.ToDateTime(dt1.AddMonths(1).ToShortDateString()));
             ControlActive(1);
+            GridFormatRule GFR = new GridFormatRule();
+            GFR.Column = gridView1.Columns["devamsizlik"];
+            gridView1.FormatRules["Format0"].Column = GFR.Column;
+            gridView1.Columns["tarih"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
 
-            //foreach (DataGridViewRow row in gridView1.rows)
-           // {
-                //More code here
-           // }
-            //var dt2 = new DateTime(dtpicker1.DateTime.AddMonths(1));
-            //gridView1.BestFitColumns();
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -263,6 +263,7 @@ namespace Demirciler
                 for (int i=1; i<= Convert.ToInt32(isgunu.Text); i++)
                 {
                     DateTime dt = new DateTime(2023,dtpicker1.DateTime.Month,i);
+                    dt.GetDateTimeFormats();
                     if (db.GetPuantaj().Where(a => a.tarih == dt.ToShortDateString()).Count() == 0)
                     {
                         var item = new Puantaj
@@ -270,7 +271,7 @@ namespace Demirciler
                         p_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id")),
                         giris_zaman = "07:30:00",
                         cikis_zaman = "17:30:00",
-                        tarih = dt.ToShortDateString(),
+                        tarih = dt.Date.ToShortDateString(),
                         devamsizlik = "-",
                         mesai_sure =0,
                         c_sure= "10:00:00",
@@ -293,6 +294,9 @@ namespace Demirciler
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
+            DateTime dt = new DateTime(2023, dtpicker1.DateTime.Month,01);
+
+            MessageBox.Show(dt.Date.ToShortDateString());
             //using var holidayClient = new HolidayClient();
         }
     }
