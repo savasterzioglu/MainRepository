@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using Projects.DbConnection.Business.MSSQL;
 
 namespace Demirciler
 {
@@ -13,12 +14,13 @@ namespace Demirciler
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Puantaj_islemleri());
+            Application.Run(new Puantaj_islemleri(new Personel()));
         }
     }
 }

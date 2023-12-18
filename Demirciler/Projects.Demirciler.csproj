@@ -93,6 +93,12 @@
     <Compile Include="Personel_islemleri.Designer.cs">
       <DependentUpon>Personel_islemleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personel_Sec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel_Sec.Designer.cs">
+      <DependentUpon>Personel_Sec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Puantaj_islemleri.cs">
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="Personel_islemleri.resx">
       <DependentUpon>Personel_islemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel_Sec.resx">
+      <DependentUpon>Personel_Sec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

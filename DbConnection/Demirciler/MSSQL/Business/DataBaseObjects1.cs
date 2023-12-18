@@ -223,8 +223,8 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class Puantaj       
     {
-        public int? id { get; set; }
-        public int? p_id { get; set; }
+        public int id { get; set; }
+        public int p_id { get; set; }
         public string giris_zaman { get; set; }
         public string cikis_zaman { get; set; }
         public double? mesai_sure { get; set; }
@@ -429,7 +429,7 @@ namespace Projects.DbConnection.Business.MSSQL
         public string P_ad { get; set;}
         public string p_adres { get; set;}
         public string p_dtarihi { get; set;}
-        public int? P_id { get; set;}
+        public int P_id { get; set;}
         public string P_soyad { get; set;}
         public string p_telefon { get; set;}
         public decimal P_ucret { get; set;}

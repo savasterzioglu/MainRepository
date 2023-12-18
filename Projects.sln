@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbYedek", "DbYedek", "{E1E5
 		F:\Demirciler_yedek.mdf = F:\Demirciler_yedek.mdf
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.StokTakip", "Projects.StokTakip\Projects.StokTakip.csproj", "{531E1356-B081-4663-B6E9-6322338838EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{8FE6C970-AE77-4861-8052-4B8F3C0D3186}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FE6C970-AE77-4861-8052-4B8F3C0D3186}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FE6C970-AE77-4861-8052-4B8F3C0D3186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531E1356-B081-4663-B6E9-6322338838EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531E1356-B081-4663-B6E9-6322338838EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531E1356-B081-4663-B6E9-6322338838EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531E1356-B081-4663-B6E9-6322338838EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

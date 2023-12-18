@@ -44,8 +44,6 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -70,8 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textsoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -144,21 +140,25 @@
             // 
             // textad
             // 
+            this.textad.Enabled = false;
             this.textad.Location = new System.Drawing.Point(48, 93);
             this.textad.Name = "textad";
             this.textad.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textad.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textad.Properties.MaskSettings.Set("mask", "d");
+            this.textad.Properties.ReadOnly = true;
             this.textad.Size = new System.Drawing.Size(67, 20);
             this.textad.TabIndex = 9;
             // 
             // textsoyad
             // 
+            this.textsoyad.Enabled = false;
             this.textsoyad.Location = new System.Drawing.Point(185, 93);
             this.textsoyad.Name = "textsoyad";
             this.textsoyad.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textsoyad.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textsoyad.Properties.MaskSettings.Set("mask", "d");
+            this.textsoyad.Properties.ReadOnly = true;
             this.textsoyad.Size = new System.Drawing.Size(71, 20);
             this.textsoyad.TabIndex = 10;
             // 
@@ -213,27 +213,6 @@
             this.simpleButton1.TabIndex = 14;
             this.simpleButton1.Text = "+";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Location = new System.Drawing.Point(2, 119);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(284, 144);
-            this.gridControl2.TabIndex = 15;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            this.gridControl2.DoubleClick += new System.EventHandler(this.gridControl2_DoubleClick);
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsBehavior.ReadOnly = true;
-            this.gridView2.OptionsSelection.UseIndicatorForSelection = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            this.gridView2.OptionsView.ShowIndicator = false;
             // 
             // textEdit1
             // 
@@ -415,7 +394,6 @@
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.textEdit1);
-            this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelControl5);
@@ -440,8 +418,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textsoyad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
@@ -462,15 +438,11 @@
         private DevExpress.XtraEditors.DateEdit dtpicker1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
-        private DevExpress.XtraEditors.TextEdit textsoyad;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.TextEdit textad;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.LabelControl labelControl6;
@@ -486,5 +458,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        public DevExpress.XtraEditors.TextEdit textad;
+        public DevExpress.XtraEditors.TextEdit textsoyad;
     }
 }

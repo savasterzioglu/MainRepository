@@ -70,16 +70,25 @@ namespace Demirciler
 
             var item = new Personel
             {
-                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id")),
+                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id").ToString()),
                 P_ad = textEdit1.Text,
                 P_soyad = textEdit2.Text,
                 p_adres = textEdit4.Text,
                 p_telefon = textEdit5.Text,
-                P_ucret = Convert.ToInt32(textEdit3.Text),
+                P_ucret = Convert.ToDecimal(textEdit3.Text),
                 P_id = Convert.ToInt32(textEdit6.Text),
                 p_dtarihi = dateEdit1.Text,
             };
             var results = db.Update_Personel(item);
+            if (results.result ==true)
+            {
+                MessageBox.Show("kaydedildi");
+
+            }
+            else
+            {
+                MessageBox.Show(results.message);
+            }
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)

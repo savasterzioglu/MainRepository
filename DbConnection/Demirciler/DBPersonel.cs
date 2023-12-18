@@ -20,7 +20,7 @@ namespace Projects.DbConnection.Business.MSSQL
         {
             using (var db = GetDB())
             {
-                return db.ExecuteUpdate<Personel>(item);
+                return db.ExecuteUpdateByID<Personel>(item);
             }
         }
 
