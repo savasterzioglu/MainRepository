@@ -15,6 +15,7 @@ namespace Demirciler
 {
     public partial class Personel_Sec : DevExpress.XtraEditors.XtraForm
     {
+        Puantaj_islemleri P_islemleri;
         public Personel_Sec()
         {
             InitializeComponent();
@@ -35,11 +36,13 @@ namespace Demirciler
             _Pers.id =Convert.ToInt32(gridView2.GetFocusedRowCellValue("id"));
             _Pers.P_ad = gridView2.GetFocusedRowCellValue("P_ad").ToString();
             _Pers.P_soyad = gridView2.GetFocusedRowCellValue("P_soyad").ToString();
-
-            Puantaj_islemleri frm = new Puantaj_islemleri(_Pers);
-            frm.Show();
+            
+            //P_islemleri.formac();
+            
+            //Puantaj_islemleri.ActiveForm.ShowDialog();
             //this.Hide();
-
+            new Puantaj_islemleri().formac(_Pers);
+            this.Dispose();
         }
     }
 }

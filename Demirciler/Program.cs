@@ -20,7 +20,7 @@ namespace Demirciler
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Puantaj_islemleri(new Personel()));
+            Application.Run(new Puantaj_islemleri());
         }
     }
 }

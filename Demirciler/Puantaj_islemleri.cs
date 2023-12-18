@@ -22,22 +22,25 @@ namespace Demirciler
         public decimal maas = 0;
         public int persid = 0; 
         public static string[] holidays =new string[32];
+
+        public DialogResult dialogResult { get; private set; }
+
         //public Personel Pers = new Personel();
 
-       /* public string textadValue
-        {
-            get { return textad.Text; }
-            set { textad.Text = value; }
-        }*/
+        /* public string textadValue
+         {
+             get { return textad.Text; }
+             set { textad.Text = value; }
+         }*/
 
-        public Puantaj_islemleri(Personel pers)
+        public Puantaj_islemleri()
         {
             InitializeComponent();
 
             ControlActive(0);
-            textad.Text = pers.P_ad;
-            textsoyad.Text = pers.P_soyad;
-            persid = pers.P_id;
+            //textad.Text = pers.P_ad;
+            //textsoyad.Text = pers.P_soyad;
+            //persid = pers.P_id;
             //gunleridoldur(DateTime.Now);
 
            // gridControl2.DataSource = db.GetPersonel().ToList();
@@ -118,12 +121,13 @@ namespace Demirciler
             catch { MessageBox.Show("Listeden var olan bir kayıt seçin."); }
         }
 
+
+        // Personel Seçimi
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             //Form frm = new Personel_islemleri();
-           Personel_Sec frm = new Personel_Sec();
-            frm.ShowDialog();
-            
+           var frm = new Personel_Sec();
+            frm.Show();
         }
 
         private void dtpicker2_DateTimeChanged(object sender, EventArgs e)
@@ -313,5 +317,13 @@ namespace Demirciler
             //using var holidayClient = new HolidayClient();
         }
 
+        public void formac(Personel _Pers)
+        {
+            
+            new Personel_islemleri().Refresh();
+            MessageBox.Show(_Pers.P_ad);
+            textad.Text = _Pers.P_ad;
+            textsoyad.Text = _Pers.P_soyad;
+        }
     }
 }

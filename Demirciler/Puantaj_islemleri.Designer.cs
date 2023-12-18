@@ -376,6 +376,7 @@
             // 
             // Puantaj_islemleri
             // 
+            this.ActiveGlowColor = System.Drawing.Color.Gray;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 551);
@@ -408,6 +409,7 @@
             this.Controls.Add(this.calisilangun);
             this.Controls.Add(this.isgunu);
             this.Name = "Puantaj_islemleri";
+            this.SurfaceMaterial = DevExpress.XtraEditors.SurfaceMaterial.Acrylic;
             this.Text = "Puantaj_islemleri";
             ((System.ComponentModel.ISupportInitialize)(this.isgunu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calisilangun.Properties)).EndInit();
