@@ -25,26 +25,13 @@ namespace Demirciler
 
         public DialogResult dialogResult { get; private set; }
 
-        //public Personel Pers = new Personel();
-
-        /* public string textadValue
-         {
-             get { return textad.Text; }
-             set { textad.Text = value; }
-         }*/
+        //gridView1.Columns["tarih"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
 
         public Puantaj_islemleri()
         {
             InitializeComponent();
 
             ControlActive(0);
-            //textad.Text = pers.P_ad;
-            //textsoyad.Text = pers.P_soyad;
-            //persid = pers.P_id;
-            //gunleridoldur(DateTime.Now);
-
-           // gridControl2.DataSource = db.GetPersonel().ToList();
-          //  gridView2.BestFitColumns();
         }
 
         void gunleridoldur(DateTime dt)
@@ -55,24 +42,24 @@ namespace Demirciler
 
             for (int i = 1; i <= is_gunu; i++)
             {
-                //int j = 0;
                 holidays[i] = new DateTime(dt.Year, dt.Month, i).DayOfWeek.ToString();
-                //MessageBox.Show(holidays[i]);
                 if (holidays[i] == "Sunday" || holidays[i] == "Saturday")
                 {
-                    //j++;
-                    //holidays[j] = i;
                     h_sonu++;
                 }
             }
-            calisilangun.Text = h_sonu.ToString();
-            //dtpicker1.EditValue = DateTime.Now;
+            calisilangun.Text = (is_gunu - h_sonu).ToString();
 
         }
 
-        void GridDoldur(int p_id)
+        void GridDoldur(int p_id, DateTime dt1)
         {
-            gridControl1.DataSource = db.GetPuantaj().ToList().Where(a => a.p_id == 1);
+            gridControl1.DataSource = db.GetPuantaj().Where(a => a.p_id == persid && Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())         
+             && Convert.ToDateTime(a.tarih) < Convert.ToDateTime(dt1.AddMonths(1).ToShortDateString()));
+            GridFormatRule GFR = new GridFormatRule();
+            GFR.Column = gridView1.Columns["devamsizlik"];
+            gridView1.FormatRules["Format0"].Column = GFR.Column;
+            gridView1.Columns["tarih"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
             gridView1.BestFitColumns();
 
         }
@@ -80,7 +67,15 @@ namespace Demirciler
 
         private void dtpicker1_DateTimeChanged(object sender, EventArgs e)
         {
-            gunleridoldur(Convert.ToDateTime(dtpicker1.EditValue));
+            if (persid != 0)
+            {
+                gunleridoldur(Convert.ToDateTime(dtpicker1.EditValue));
+                GridDoldur(persid, Convert.ToDateTime(dtpicker1.EditValue));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Personel Seçiniz.");
+            }
         }
 
 
@@ -99,7 +94,7 @@ namespace Demirciler
             GridFormatRule GFR = new GridFormatRule();
             GFR.Column = gridView1.Columns["devamsizlik"];
             gridView1.FormatRules["Format0"].Column = GFR.Column;
-    */        gridView1.Columns["tarih"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+    */        
 
         }
 
@@ -126,8 +121,8 @@ namespace Demirciler
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             //Form frm = new Personel_islemleri();
-           var frm = new Personel_Sec();
-            frm.Show();
+           Personel_Sec frm = new Personel_Sec();
+            frm.ShowDialog(this);
         }
 
         private void dtpicker2_DateTimeChanged(object sender, EventArgs e)
@@ -155,6 +150,7 @@ namespace Demirciler
 
                 var item = new Puantaj
                 {
+                    p_id = persid,
                     giris_zaman = textEdit1.Text,
                     cikis_zaman = textEdit2.Text,
                     devamsizlik = comboBoxEdit1.Text,
@@ -162,11 +158,12 @@ namespace Demirciler
                     mesai_sure = ts2.TotalHours,
                     ucret = UcretHesapla(Convert.ToDecimal(ts1.TotalHours),Convert.ToDecimal(ts2.TotalHours)) ,
                     tarih = dtpicker2.Text,
-              //      p_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id")),
                 };
-                var result = db.insert_Puantaj(item);
-               // MessageBox.Show(UcretHesapla(Convert.ToDecimal(ts1.TotalHours), Convert.ToDecimal(ts2.TotalHours)).ToString());
-                //MessageBox.Show(maas.ToString());
+                if (db.GetPuantaj().ToList().Where(a => a.tarih == item.tarih).Count() == 0)
+                {
+                    var result = db.insert_Puantaj(item);
+                }
+                else { MessageBox.Show("Aynı güne kayıt ekleyemezsiniz."); }
             }
             catch { MessageBox.Show("Lütfen verileri eksiksiz ve doğru girin, Personel tablosundan seçim yaptığınıza emin olun."); }
 
@@ -201,6 +198,7 @@ namespace Demirciler
                 textEdit1.Enabled = false;
                 textEdit2.Enabled = false;
                 textEdit3.Enabled = false;
+                dtpicker1.Enabled = false;
             }
 
 
@@ -209,9 +207,9 @@ namespace Demirciler
         {
             //m1 günlük çalışılan normal süre
             //t günlük çalışılan mesai süresi
-            
             decimal r1;
-            r1 = (maas/300)*(m1 + (t*(3/2)));
+            r1 = (m1 + ((t*3)/2));
+            r1 = r1 * (maas / 300);
             return r1;
         }
 
@@ -237,23 +235,20 @@ namespace Demirciler
                 var item = new Puantaj
                 {
                     id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id")),
-                    giris_zaman = textEdit1.Text,
-                    cikis_zaman = textEdit2.Text,
+                    giris_zaman = textEdit1.Text+":00",
+                    cikis_zaman = textEdit2.Text+":00",
                     devamsizlik = comboBoxEdit1.Text,
                     c_sure = ts1.Add(ts2).ToString(),
                     mesai_sure = ts2.TotalHours,
                     ucret = UcretHesapla(Convert.ToDecimal(ts1.TotalHours), Convert.ToDecimal(ts2.TotalHours)),
                     p_id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("p_id")),
                 };
-                //if (item.id != 0)
-                //{
+                if (item.id != 0)
+                {
                     var result = db.Update_Puantaj(item);
-                //}
-                //else { MessageBox.Show("Listeden bir kayıt seçin"); }
-                //MessageBox.Show("Personel id :", gridView1.GetFocusedRowCellValue("P_id").ToString());
+                }
+                { MessageBox.Show("Listeden bir kayıt seçin"); }
                 MessageBox.Show("Kayıt Güncellendi: " + gridView1.GetFocusedRowCellValue("id"));
-                // MessageBox.Show(UcretHesapla(Convert.ToDecimal(ts1.TotalHours), Convert.ToDecimal(ts2.TotalHours)).ToString());
-                //MessageBox.Show(maas.ToString());
             }
             catch { MessageBox.Show("Lütfen verileri eksiksiz ve doğru girin, Personel tablosundan seçim yaptığınıza emin olun."); }
 
@@ -265,30 +260,29 @@ namespace Demirciler
             textEdit2.Text = gridView1.GetFocusedRowCellValue("cikis_zaman").ToString();
             comboBoxEdit1.Text = gridView1.GetFocusedRowCellValue("devamsizlik").ToString();
             textEdit3.Text = mesai_Hesapla(textEdit2.Text, textEdit1.Text);
-            dtpicker2.Text = gridView1.GetFocusedRowCellValue("tarih").ToString();
-            //MessageBox.Show(mesai_Hesapla(textEdit2.Text, textEdit1.Text));
+            dtpicker2.EditValue = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("tarih")).AddMonths(-1);
+            ControlActive(1);
         }
         private string mesai_Hesapla(string dt1,string dt2)
         {
-            //return (Convert.ToDateTime(dt2)-Convert.ToDateTime(dt1)- (new TimeSpan(10,0,0))).ToString();
             return (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text) - new TimeSpan(10, 0, 0)).TotalHours.ToString();
         }
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-      //---//      if (isgunu.Text != "" && gridView2.GetFocusedRowCellValue("P_id").ToString() != "")
-            {
+            
                 for (int i=1; i<= Convert.ToInt32(isgunu.Text); i++)
                 {
+
                     DateTime dt = new DateTime(2023,dtpicker1.DateTime.Month,i);
-                    dt.GetDateTimeFormats();
+
                     if (db.GetPuantaj().Where(a => a.tarih == dt.ToShortDateString()).Count() == 0)
                     {
                         var item = new Puantaj
                     {
-        //-----///                p_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id")),
+                        p_id= persid,
                         giris_zaman = "07:30:00",
                         cikis_zaman = "17:30:00",
-                        tarih = dt.Date.ToShortDateString(),
+                        tarih = dt.ToString("dd.MM.yyyy"),
                         devamsizlik = "-",
                         mesai_sure =0,
                         c_sure= "10:00:00",
@@ -297,16 +291,18 @@ namespace Demirciler
                     if (holidays[i] == "Sunday" || holidays[i] == "Saturday")
                     {
                         item.devamsizlik = "h.sonu";
+                        item.ucret = 0;
+                        item.giris_zaman = "00:00:00";
+                        item.cikis_zaman = "00:00:00";
+                        item.c_sure = "00:00:00";
                     }
 
-                   // var item2 = new Puantaj
-                    
                     var result = db.insert_Puantaj(item);
+                        
                     }
                     else { MessageBox.Show("Seçili personelin" + dt.ToShortDateString() + "tarihinde kaydı mevcuttur."); }
                 }
-                gridControl2_DoubleClick(sender,e);
-            };
+            dtpicker1_DateTimeChanged(sender, e);
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
@@ -314,16 +310,15 @@ namespace Demirciler
             DateTime dt = new DateTime(2023, dtpicker1.DateTime.Month,01);
 
             MessageBox.Show(dt.Date.ToShortDateString());
-            //using var holidayClient = new HolidayClient();
         }
 
         public void formac(Personel _Pers)
         {
-            
-            new Personel_islemleri().Refresh();
-            MessageBox.Show(_Pers.P_ad);
-            textad.Text = _Pers.P_ad;
+            textad.EditValue= _Pers.P_ad;
             textsoyad.Text = _Pers.P_soyad;
+            persid = _Pers.P_id;
+            maas = _Pers.P_ucret;
+            dtpicker1.Enabled = true;
         }
     }
 }

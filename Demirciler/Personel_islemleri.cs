@@ -131,7 +131,7 @@ namespace Demirciler
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(dateEdit1.EditValue.ToString());
             //textEdit7.Text = dateEdit1.DateTime.GetDateTimeFormats("dd/mm/yyyy").ToString();
         }
     }

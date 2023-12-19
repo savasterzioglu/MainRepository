@@ -24,25 +24,33 @@ namespace Demirciler
             gridControl2.DataSource = db.GetPersonel();
         }
 
-        private void gridControl2_Click(object sender, EventArgs e)
-        {
-           
-            
-        }
 
         private void gridControl2_DoubleClick(object sender, EventArgs e)
         {
             var _Pers = new Personel();
-            _Pers.id =Convert.ToInt32(gridView2.GetFocusedRowCellValue("id"));
+            _Pers.P_id =Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id"));
             _Pers.P_ad = gridView2.GetFocusedRowCellValue("P_ad").ToString();
             _Pers.P_soyad = gridView2.GetFocusedRowCellValue("P_soyad").ToString();
-            
-            //P_islemleri.formac();
-            
-            //Puantaj_islemleri.ActiveForm.ShowDialog();
-            //this.Hide();
-            new Puantaj_islemleri().formac(_Pers);
-            this.Dispose();
+            _Pers.P_ucret = Convert.ToDecimal(gridView2.GetFocusedRowCellValue("P_ucret").ToString());
+            Puantaj_islemleri frm = this.Owner as Puantaj_islemleri;
+            // Çalışan
+            //frm.textad.Text = "sezer";
+            frm.formac(_Pers);
+            //this.Dispose();
+            this.Close();
+        }
+
+        private void Ekle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Personel_islemleri frm = new Personel_islemleri();
+            frm.ShowDialog();
+
+        }
+
+        private void yenile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var db = new DemircilerDB();
+            gridControl2.DataSource = db.GetPersonel();
         }
     }
 }

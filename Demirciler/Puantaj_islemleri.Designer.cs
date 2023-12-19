@@ -78,6 +78,7 @@
             // 
             // isgunu
             // 
+            this.isgunu.Enabled = false;
             this.isgunu.Location = new System.Drawing.Point(48, 38);
             this.isgunu.Name = "isgunu";
             this.isgunu.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -88,6 +89,7 @@
             // 
             // calisilangun
             // 
+            this.calisilangun.Enabled = false;
             this.calisilangun.Location = new System.Drawing.Point(242, 38);
             this.calisilangun.Name = "calisilangun";
             this.calisilangun.Size = new System.Drawing.Size(44, 20);
@@ -118,7 +120,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpicker1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpicker1.Properties.MaskSettings.Set("mask", "d");
+            this.dtpicker1.Properties.MaskSettings.Set("mask", "dd.MM.yyyy");
+            this.dtpicker1.Properties.MaskSettings.Set("spinWithCarry", true);
+            this.dtpicker1.Properties.MaskSettings.Set("useAdvancingCaret", true);
+            this.dtpicker1.Properties.UseMaskAsDisplayFormat = true;
             this.dtpicker1.Size = new System.Drawing.Size(85, 20);
             this.dtpicker1.TabIndex = 6;
             this.dtpicker1.DateTimeChanged += new System.EventHandler(this.dtpicker1_DateTimeChanged);
@@ -146,7 +151,7 @@
             this.textad.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textad.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textad.Properties.MaskSettings.Set("mask", "d");
-            this.textad.Properties.ReadOnly = true;
+            this.textad.Properties.UseReadOnlyAppearance = false;
             this.textad.Size = new System.Drawing.Size(67, 20);
             this.textad.TabIndex = 9;
             // 
@@ -158,7 +163,7 @@
             this.textsoyad.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textsoyad.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textsoyad.Properties.MaskSettings.Set("mask", "d");
-            this.textsoyad.Properties.ReadOnly = true;
+            this.textsoyad.Properties.UseReadOnlyAppearance = false;
             this.textsoyad.Size = new System.Drawing.Size(71, 20);
             this.textsoyad.TabIndex = 10;
             // 
@@ -180,10 +185,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(2, 269);
+            this.gridControl1.Location = new System.Drawing.Point(2, 120);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(690, 270);
+            this.gridControl1.Size = new System.Drawing.Size(690, 419);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -324,14 +329,17 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpicker2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpicker2.Properties.MaskSettings.Set("mask", "d");
+            this.dtpicker2.Properties.MaskSettings.Set("mask", "dd.MM.yyyy");
+            this.dtpicker2.Properties.MaskSettings.Set("spinWithCarry", true);
+            this.dtpicker2.Properties.MaskSettings.Set("useAdvancingCaret", true);
+            this.dtpicker2.Properties.UseMaskAsDisplayFormat = true;
             this.dtpicker2.Size = new System.Drawing.Size(85, 20);
             this.dtpicker2.TabIndex = 24;
             this.dtpicker2.DateTimeChanged += new System.EventHandler(this.dtpicker2_DateTimeChanged);
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(292, 240);
+            this.simpleButton2.Location = new System.Drawing.Point(366, 91);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
             this.simpleButton2.TabIndex = 26;
@@ -340,7 +348,7 @@
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(373, 240);
+            this.simpleButton3.Location = new System.Drawing.Point(447, 91);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(75, 23);
             this.simpleButton3.TabIndex = 27;
@@ -349,7 +357,7 @@
             // 
             // simpleButton4
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(454, 240);
+            this.simpleButton4.Location = new System.Drawing.Point(527, 91);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(75, 23);
             this.simpleButton4.TabIndex = 28;
@@ -358,7 +366,7 @@
             // 
             // simpleButton5
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(535, 240);
+            this.simpleButton5.Location = new System.Drawing.Point(608, 91);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(66, 23);
             this.simpleButton5.TabIndex = 29;
@@ -367,7 +375,7 @@
             // 
             // simpleButton6
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(463, 168);
+            this.simpleButton6.Location = new System.Drawing.Point(592, 41);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(75, 23);
             this.simpleButton6.TabIndex = 30;
