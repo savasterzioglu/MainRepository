@@ -59,6 +59,9 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.aylik = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.isgunu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calisilangun.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker1.Properties)).BeginInit();
@@ -74,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aylik.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // isgunu
@@ -188,7 +193,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 120);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(690, 419);
+            this.gridControl1.Size = new System.Drawing.Size(672, 419);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -314,7 +319,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(447, 15);
+            this.labelControl10.Location = new System.Drawing.Point(444, 15);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(24, 13);
             this.labelControl10.TabIndex = 25;
@@ -382,12 +387,53 @@
             this.simpleButton6.Text = "Tatil";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
+            // aylik
+            // 
+            this.aylik.Enabled = false;
+            this.aylik.Location = new System.Drawing.Point(509, 60);
+            this.aylik.Name = "aylik";
+            this.aylik.Properties.Appearance.Options.UseTextOptions = true;
+            this.aylik.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.aylik.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.aylik.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.aylik.Properties.MaskSettings.Set("mask", "c");
+            this.aylik.Properties.MaskSettings.Set("culture", "tr");
+            this.aylik.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.aylik.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.aylik.Properties.ReadOnly = true;
+            this.aylik.Properties.UseMaskAsDisplayFormat = true;
+            this.aylik.Size = new System.Drawing.Size(66, 20);
+            this.aylik.TabIndex = 31;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(444, 63);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(25, 13);
+            this.labelControl11.TabIndex = 32;
+            this.labelControl11.Text = "Aylık ";
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Enabled = false;
+            this.textEdit4.Location = new System.Drawing.Point(592, 12);
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEdit4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEdit4.Properties.ReadOnly = true;
+            this.textEdit4.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit4.Size = new System.Drawing.Size(66, 20);
+            this.textEdit4.TabIndex = 33;
+            // 
             // Puantaj_islemleri
             // 
             this.ActiveGlowColor = System.Drawing.Color.Gray;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 551);
+            this.ClientSize = new System.Drawing.Size(679, 551);
+            this.Controls.Add(this.textEdit4);
+            this.Controls.Add(this.labelControl11);
+            this.Controls.Add(this.aylik);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.simpleButton4);
@@ -434,6 +480,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aylik.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +518,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         public DevExpress.XtraEditors.TextEdit textad;
         public DevExpress.XtraEditors.TextEdit textsoyad;
+        private DevExpress.XtraEditors.TextEdit aylik;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
     }
 }

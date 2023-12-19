@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -76,6 +77,13 @@ namespace Demirciler
             {
                 MessageBox.Show("Lütfen Personel Seçiniz.");
             }
+            var firstdaymonth = new DateTime(dtpicker1.DateTime.Year, dtpicker1.DateTime.Month, 1);
+            var lastdaymonth = firstdaymonth.AddDays(29);
+            
+
+            aylik.Text = db.GetPuantaj().ToList().Where(a => Convert.ToDateTime(a.tarih) >= firstdaymonth && Convert.ToDateTime(a.tarih) <= lastdaymonth).Sum(a=> a.ucret).ToString();
+            decimal yuvarla = Math.Ceiling(Convert.ToDecimal(aylik.Text));
+            //textEdit4.Text = Math.Round(decimal.Parse("99,9",0)).ToString();
         }
 
 
@@ -260,7 +268,7 @@ namespace Demirciler
             textEdit2.Text = gridView1.GetFocusedRowCellValue("cikis_zaman").ToString();
             comboBoxEdit1.Text = gridView1.GetFocusedRowCellValue("devamsizlik").ToString();
             textEdit3.Text = mesai_Hesapla(textEdit2.Text, textEdit1.Text);
-            dtpicker2.EditValue = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("tarih")).AddMonths(-1);
+            dtpicker2.EditValue = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("tarih"));
             ControlActive(1);
         }
         private string mesai_Hesapla(string dt1,string dt2)
@@ -286,19 +294,13 @@ namespace Demirciler
                         devamsizlik = "-",
                         mesai_sure =0,
                         c_sure= "10:00:00",
-                        ucret= maas/Convert.ToInt32(isgunu.Text),  
+                        ucret= maas/30,  
                     };
                     if (holidays[i] == "Sunday" || holidays[i] == "Saturday")
                     {
                         item.devamsizlik = "h.sonu";
-                        item.ucret = 0;
-                        item.giris_zaman = "00:00:00";
-                        item.cikis_zaman = "00:00:00";
-                        item.c_sure = "00:00:00";
                     }
-
                     var result = db.insert_Puantaj(item);
-                        
                     }
                     else { MessageBox.Show("Seçili personelin" + dt.ToShortDateString() + "tarihinde kaydı mevcuttur."); }
                 }
