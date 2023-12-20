@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.isgunu = new DevExpress.XtraEditors.TextEdit();
             this.calisilangun = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -62,6 +62,8 @@
             this.aylik = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.aylikmesai = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.isgunu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calisilangun.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker1.Properties)).BeginInit();
@@ -79,12 +81,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aylik.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aylikmesai.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // isgunu
             // 
             this.isgunu.Enabled = false;
-            this.isgunu.Location = new System.Drawing.Point(48, 38);
+            this.isgunu.Location = new System.Drawing.Point(45, 9);
             this.isgunu.Name = "isgunu";
             this.isgunu.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.isgunu.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
@@ -95,14 +98,14 @@
             // calisilangun
             // 
             this.calisilangun.Enabled = false;
-            this.calisilangun.Location = new System.Drawing.Point(242, 38);
+            this.calisilangun.Location = new System.Drawing.Point(86, 35);
             this.calisilangun.Name = "calisilangun";
             this.calisilangun.Size = new System.Drawing.Size(44, 20);
             this.calisilangun.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(2, 41);
+            this.labelControl1.Location = new System.Drawing.Point(2, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(37, 13);
             this.labelControl1.TabIndex = 4;
@@ -110,7 +113,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(158, 41);
+            this.labelControl2.Location = new System.Drawing.Point(2, 41);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(78, 13);
             this.labelControl2.TabIndex = 5;
@@ -119,7 +122,7 @@
             // dtpicker1
             // 
             this.dtpicker1.EditValue = null;
-            this.dtpicker1.Location = new System.Drawing.Point(201, 12);
+            this.dtpicker1.Location = new System.Drawing.Point(201, 5);
             this.dtpicker1.Name = "dtpicker1";
             this.dtpicker1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -135,7 +138,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(158, 15);
+            this.labelControl3.Location = new System.Drawing.Point(171, 8);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(24, 13);
             this.labelControl3.TabIndex = 7;
@@ -201,13 +204,13 @@
             // 
             // gridView1
             // 
-            gridFormatRule1.ApplyToRow = true;
-            gridFormatRule1.Name = "Format0";
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue1.PredefinedName = "Green Fill";
-            formatConditionRuleValue1.Value1 = "h.sonu";
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            this.gridView1.FormatRules.Add(gridFormatRule1);
+            gridFormatRule2.ApplyToRow = true;
+            gridFormatRule2.Name = "Format0";
+            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue2.PredefinedName = "Green Fill";
+            formatConditionRuleValue2.Value1 = "h.sonu";
+            gridFormatRule2.Rule = formatConditionRuleValue2;
+            this.gridView1.FormatRules.Add(gridFormatRule2);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -425,12 +428,30 @@
             this.textEdit4.Size = new System.Drawing.Size(66, 20);
             this.textEdit4.TabIndex = 33;
             // 
+            // aylikmesai
+            // 
+            this.aylikmesai.Enabled = false;
+            this.aylikmesai.Location = new System.Drawing.Point(241, 35);
+            this.aylikmesai.Name = "aylikmesai";
+            this.aylikmesai.Size = new System.Drawing.Size(44, 20);
+            this.aylikmesai.TabIndex = 34;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(136, 41);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(99, 13);
+            this.labelControl12.TabIndex = 35;
+            this.labelControl12.Text = "Aylık Yapılacak Mesai";
+            // 
             // Puantaj_islemleri
             // 
             this.ActiveGlowColor = System.Drawing.Color.Gray;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 551);
+            this.Controls.Add(this.labelControl12);
+            this.Controls.Add(this.aylikmesai);
             this.Controls.Add(this.textEdit4);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.aylik);
@@ -482,6 +503,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aylik.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aylikmesai.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,5 +543,7 @@
         private DevExpress.XtraEditors.TextEdit aylik;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit aylikmesai;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
     }
 }

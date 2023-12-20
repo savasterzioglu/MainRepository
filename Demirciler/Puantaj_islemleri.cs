@@ -37,7 +37,8 @@ namespace Demirciler
 
         void gunleridoldur(DateTime dt)
         {
-            int is_gunu=0, h_sonu = 0;
+            int is_gunu=0, h_sonu = 0,pazar_gunleri=0,calisilan_gun = 0;
+            double aylik_mesai = 0;
             is_gunu =  DateTime.DaysInMonth(dt.Year, dt.Month);
             isgunu.EditValue = is_gunu;
 
@@ -48,9 +49,16 @@ namespace Demirciler
                 {
                     h_sonu++;
                 }
+                if (holidays[i] == "Saturday")
+                {
+                    pazar_gunleri++;
+                }
             }
-            calisilangun.Text = (is_gunu - h_sonu).ToString();
-
+            //calisilangun.Text = (is_gunu - h_sonu).ToString();
+            calisilan_gun = (is_gunu - pazar_gunleri);
+            aylik_mesai = 180 + ((calisilan_gun - 24) * 7.5);
+            aylikmesai.Text = aylik_mesai.ToString();
+            calisilangun.Text = calisilan_gun.ToString();  
         }
 
         void GridDoldur(int p_id, DateTime dt1)
@@ -63,6 +71,11 @@ namespace Demirciler
             gridView1.Columns["tarih"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
             gridView1.BestFitColumns();
 
+            var firstdaymonth = new DateTime(dtpicker1.DateTime.Year, dtpicker1.DateTime.Month, 1);
+            var lastdaymonth = firstdaymonth.AddDays(29);
+            decimal _aylik = db.GetPuantaj().ToList().Where(a => Convert.ToDateTime(a.tarih) >= firstdaymonth && Convert.ToDateTime(a.tarih) <= lastdaymonth).Sum(a => a.ucret);
+            aylik.Text = Convert.ToString(Math.Ceiling(_aylik));
+            maas_hesap(dt1);
         }
 
 
@@ -77,12 +90,6 @@ namespace Demirciler
             {
                 MessageBox.Show("Lütfen Personel Seçiniz.");
             }
-            var firstdaymonth = new DateTime(dtpicker1.DateTime.Year, dtpicker1.DateTime.Month, 1);
-            var lastdaymonth = firstdaymonth.AddDays(29);
-            
-
-            aylik.Text = db.GetPuantaj().ToList().Where(a => Convert.ToDateTime(a.tarih) >= firstdaymonth && Convert.ToDateTime(a.tarih) <= lastdaymonth).Sum(a=> a.ucret).ToString();
-            decimal yuvarla = Math.Ceiling(Convert.ToDecimal(aylik.Text));
             //textEdit4.Text = Math.Round(decimal.Parse("99,9",0)).ToString();
         }
 
@@ -113,10 +120,13 @@ namespace Demirciler
                 var item = new Puantaj
                 {
                     id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id")),
+                    p_id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("P_id")),
                 };
                 if (item.id != 0)
                 {
                     var result = db.delete_Puantaj(item);
+                    MessageBox.Show("Kayıt Silindi");
+                    GridDoldur(item.p_id,dtpicker1.DateTime);
                 } else { MessageBox.Show("Listeden bir kayıt seçin"); }
                 item.id = 0;
                 //gridControl2.Refresh();
@@ -170,6 +180,8 @@ namespace Demirciler
                 if (db.GetPuantaj().ToList().Where(a => a.tarih == item.tarih).Count() == 0)
                 {
                     var result = db.insert_Puantaj(item);
+                    MessageBox.Show("Kaydedildi");
+                    GridDoldur(item.p_id,dtpicker1.DateTime);
                 }
                 else { MessageBox.Show("Aynı güne kayıt ekleyemezsiniz."); }
             }
@@ -226,9 +238,9 @@ namespace Demirciler
 
             try
             {
+                TimeSpan ts3 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text));
                 TimeSpan ts2 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text) - (new TimeSpan(10, 0, 0)));
                 TimeSpan ts1 = new TimeSpan(10, 0, 0);
-
                 if (ts2.TotalHours >= 0)
                 {
                     ts1 = new TimeSpan(10, 0, 0);
@@ -247,16 +259,21 @@ namespace Demirciler
                     cikis_zaman = textEdit2.Text+":00",
                     devamsizlik = comboBoxEdit1.Text,
                     c_sure = ts1.Add(ts2).ToString(),
-                    mesai_sure = ts2.TotalHours,
+                    mesai_sure = ts3.TotalHours,
                     ucret = UcretHesapla(Convert.ToDecimal(ts1.TotalHours), Convert.ToDecimal(ts2.TotalHours)),
                     p_id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("p_id")),
                 };
+                if(item.devamsizlik=="Devamsız")
+                {
+                    item.ucret = 0;
+                };
+
                 if (item.id != 0)
                 {
                     var result = db.Update_Puantaj(item);
-                }
-                { MessageBox.Show("Listeden bir kayıt seçin"); }
+                }else{ MessageBox.Show("Listeden bir kayıt seçin"); }
                 MessageBox.Show("Kayıt Güncellendi: " + gridView1.GetFocusedRowCellValue("id"));
+                GridDoldur(item.p_id,dtpicker1.DateTime);
             }
             catch { MessageBox.Show("Lütfen verileri eksiksiz ve doğru girin, Personel tablosundan seçim yaptığınıza emin olun."); }
 
@@ -292,13 +309,17 @@ namespace Demirciler
                         cikis_zaman = "17:30:00",
                         tarih = dt.ToString("dd.MM.yyyy"),
                         devamsizlik = "-",
-                        mesai_sure =0,
+                        mesai_sure =10,
                         c_sure= "10:00:00",
                         ucret= maas/30,  
                     };
                     if (holidays[i] == "Sunday" || holidays[i] == "Saturday")
                     {
                         item.devamsizlik = "h.sonu";
+                        item.c_sure = "00:00:00";
+                        item.giris_zaman = "00:00:00";
+                        item.cikis_zaman = "00:00:00";
+                        item.mesai_sure = 0;
                     }
                     var result = db.insert_Puantaj(item);
                     }
@@ -321,6 +342,15 @@ namespace Demirciler
             persid = _Pers.P_id;
             maas = _Pers.P_ucret;
             dtpicker1.Enabled = true;
+        }
+        public void maas_hesap(DateTime dt1)
+        {
+            double toplamsure = 0;
+
+            toplamsure = 
+                db.GetPuantaj().Where(a => a.p_id == persid && Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())
+                            && Convert.ToDateTime(a.tarih) < Convert.ToDateTime(dt1.AddMonths(1).ToShortDateString())).Sum(a=> a.mesai_sure);
+            MessageBox.Show(toplamsure.ToString());
         }
     }
 }

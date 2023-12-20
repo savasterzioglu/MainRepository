@@ -15,7 +15,7 @@ namespace Demirciler
 {
     public partial class Personel_Sec : DevExpress.XtraEditors.XtraForm
     {
-        Puantaj_islemleri P_islemleri;
+        //Puantaj_islemleri P_islemleri;
         public Personel_Sec()
         {
             InitializeComponent();

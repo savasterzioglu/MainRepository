@@ -227,10 +227,10 @@ namespace Projects.DbConnection.Business.MSSQL
         public int p_id { get; set; }
         public string giris_zaman { get; set; }
         public string cikis_zaman { get; set; }
-        public double? mesai_sure { get; set; }
+        public double mesai_sure { get; set; }
         public string tarih { get; set; }
         public string c_sure { get; set;}
-        public decimal? ucret { get; set; }
+        public decimal ucret { get; set; }
         public string devamsizlik { get; set;}
     }
     public class Sabit_Parametreler
