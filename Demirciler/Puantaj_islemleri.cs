@@ -207,7 +207,6 @@ namespace Demirciler
                 textEdit1.Enabled = true;
                 textEdit2.Enabled = true;
                 textEdit3.Enabled = true;
-
             } else
             {
                 simpleButton2.Enabled = false;
@@ -220,8 +219,6 @@ namespace Demirciler
                 textEdit3.Enabled = false;
                 dtpicker1.Enabled = false;
             }
-
-
         }
         decimal UcretHesapla(decimal m1,decimal t)
         {
@@ -276,7 +273,6 @@ namespace Demirciler
                 GridDoldur(item.p_id,dtpicker1.DateTime);
             }
             catch { MessageBox.Show("Lütfen verileri eksiksiz ve doğru girin, Personel tablosundan seçim yaptığınıza emin olun."); }
-
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -302,16 +298,16 @@ namespace Demirciler
 
                     if (db.GetPuantaj().Where(a => a.tarih == dt.ToShortDateString()).Count() == 0)
                     {
-                        var item = new Puantaj
+                    var item = new Puantaj
                     {
-                        p_id= persid,
+                        p_id = persid,
                         giris_zaman = "07:30:00",
                         cikis_zaman = "17:30:00",
                         tarih = dt.ToString("dd.MM.yyyy"),
                         devamsizlik = "-",
-                        mesai_sure =10,
-                        c_sure= "10:00:00",
-                        ucret= maas/30,  
+                        mesai_sure = 10,
+                        c_sure = "10:00:00",
+                        ucret = maas / 30,
                     };
                     if (holidays[i] == "Sunday" || holidays[i] == "Saturday")
                     {
@@ -345,12 +341,20 @@ namespace Demirciler
         }
         public void maas_hesap(DateTime dt1)
         {
-            double toplamsure = 0;
+            double toplamsure = 0,gec_satler;
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                DataRowView row = gridView1.GetRow(i) as DataRowView;
+                //gec_satler = gec_satler + ()
+                MessageBox.Show(gridView1.GetRowCellValue(5, "tarih").ToString());
+            
+            //..  
+            }
 
-            toplamsure = 
-                db.GetPuantaj().Where(a => a.p_id == persid && Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())
-                            && Convert.ToDateTime(a.tarih) < Convert.ToDateTime(dt1.AddMonths(1).ToShortDateString())).Sum(a=> a.mesai_sure);
-            MessageBox.Show(toplamsure.ToString());
+            //toplamsure = 
+            //     db.GetPuantaj().Where(a => a.p_id == persid && Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())
+            //               && Convert.ToDateTime(a.tarih) < Convert.ToDateTime(dt1.AddMonths(1).ToShortDateString())).Sum(a=> a.mesai_sure);
+            // MessageBox.Show(toplamsure.ToString());
         }
     }
 }
