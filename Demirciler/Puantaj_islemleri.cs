@@ -326,9 +326,10 @@ namespace Demirciler
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
-            DateTime dt = new DateTime(2023, dtpicker1.DateTime.Month,01);
+            //DateTime dt = new DateTime(2023, dtpicker1.DateTime.Month,01);
 
-            MessageBox.Show(dt.Date.ToShortDateString());
+            // MessageBox.Show(dt.Date.ToShortDateString());
+           // maas_hesap();
         }
 
         public void formac(Personel _Pers)
@@ -341,16 +342,41 @@ namespace Demirciler
         }
         public void maas_hesap(DateTime dt1)
         {
-            double toplamsure = 0,gec_satler;
+            double toplamucret = 0,gec_satler=0,tatil_mesai=0,normal_mesai=0;
+            int dvmszgun = 0;
+
             for (int i = 0; i < gridView1.DataRowCount; i++)
             {
-                DataRowView row = gridView1.GetRow(i) as DataRowView;
+                //DataRowView row = gridView1.GetRow(i) as DataRowView;
                 //commit yapmadı bilgilendirme
-                   //gec_satler = gec_satler + ()
-                MessageBox.Show(gridView1.GetRowCellValue(5, "tarih").ToString());
-            //return
-            //..  
+                //gec_satler = gec_satler + ()
+                if (gridView1.GetRowCellValue(i, "devamsizlik").ToString() == "Devamsız")
+                {
+                    dvmszgun++;
+                }
+                if (gridView1.GetRowCellValue(i, "devamsizlik").ToString() == "tatil")
+                {
+                    tatil_mesai += Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString());
+                }
+                if (Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString()) > 10 || gridView1.GetRowCellValue(i, "devamsizlik").ToString() == "h.sonu")
+                {
+                    normal_mesai += Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString());
+                }
+                if (Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString()) < 0)
+                {
+                    gec_satler += Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString());
+                }
             }
+
+            
+            var res1 = ((30 - dvmszgun) * 7.5) + (gec_satler);
+            var res2 = (normal_mesai * 1.5) + (tatil_mesai * 2);
+            toplamucret = (res1 * (Convert.ToDouble(maas) / 225))+ (res2*(Convert.ToDouble(maas)/225));
+
+            MessageBox.Show("Gelmediği gün :"+dvmszgun.ToString());
+            MessageBox.Show("Geç Kaldığı Süre :" + gec_satler.ToString());
+            MessageBox.Show("Maaş Ücreti :" + maas.ToString());
+            MessageBox.Show("aylik toplam ucret:" + toplamucret.ToString());
 
             //toplamsure = 
             //     db.GetPuantaj().Where(a => a.p_id == persid && Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())

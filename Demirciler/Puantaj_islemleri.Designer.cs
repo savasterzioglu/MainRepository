@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.isgunu = new DevExpress.XtraEditors.TextEdit();
             this.calisilangun = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -204,13 +204,13 @@
             // 
             // gridView1
             // 
-            gridFormatRule2.ApplyToRow = true;
-            gridFormatRule2.Name = "Format0";
-            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue2.PredefinedName = "Green Fill";
-            formatConditionRuleValue2.Value1 = "h.sonu";
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            this.gridView1.FormatRules.Add(gridFormatRule2);
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue1.PredefinedName = "Green Fill";
+            formatConditionRuleValue1.Value1 = "h.sonu";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -293,9 +293,10 @@
             this.comboBoxEdit1.Properties.DropDownRows = 3;
             this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
             "-",
+            "Devamsız",
             "Raporlu",
             "İzinli",
-            "Devamsız"});
+            "Tatil"});
             this.comboBoxEdit1.Properties.NullText = "-";
             this.comboBoxEdit1.Size = new System.Drawing.Size(66, 20);
             this.comboBoxEdit1.TabIndex = 21;

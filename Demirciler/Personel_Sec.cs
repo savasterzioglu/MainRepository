@@ -32,6 +32,7 @@ namespace Demirciler
             _Pers.P_ad = gridView2.GetFocusedRowCellValue("P_ad").ToString();
             _Pers.P_soyad = gridView2.GetFocusedRowCellValue("P_soyad").ToString();
             _Pers.P_ucret = Convert.ToDecimal(gridView2.GetFocusedRowCellValue("P_ucret").ToString());
+            
             Puantaj_islemleri frm = this.Owner as Puantaj_islemleri;
             // Çalışan
             //frm.textad.Text = "sezer";
