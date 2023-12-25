@@ -345,7 +345,8 @@ namespace Demirciler
             for (int i = 0; i < gridView1.DataRowCount; i++)
             {
                 DataRowView row = gridView1.GetRow(i) as DataRowView;
-                //gec_satler = gec_satler + ()
+                //commit yapmadı bilgilendirme
+                   //gec_satler = gec_satler + ()
                 MessageBox.Show(gridView1.GetRowCellValue(5, "tarih").ToString());
             //return
             //..  
