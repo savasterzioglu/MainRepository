@@ -158,7 +158,6 @@ namespace Demirciler
                 if (ts2.TotalHours >= 0)
                 {
                     ts1 = new TimeSpan(10, 0, 0);
-                
                 }
                 else
                 {
@@ -174,8 +173,10 @@ namespace Demirciler
                     devamsizlik = comboBoxEdit1.Text,
                     c_sure = ts1.Add(ts2).ToString(),
                     mesai_sure = ts2.TotalHours,
+                    ek_mesai = 0,
                     ucret = UcretHesapla(Convert.ToDecimal(ts1.TotalHours),Convert.ToDecimal(ts2.TotalHours)) ,
                     tarih = dtpicker2.Text,
+
                 };
                 if (db.GetPuantaj().ToList().Where(a => a.tarih == item.tarih).Count() == 0)
                 {
@@ -233,34 +234,57 @@ namespace Demirciler
         private void simpleButton3_Click(object sender, EventArgs e)
         {
 
+
+            /* try
+             {
+                 TimeSpan ts3 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text));
+                 TimeSpan ts2 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text) - (new TimeSpan(10, 0, 0)));
+                 TimeSpan ts1 = new TimeSpan(10, 0, 0);
+                 if (ts2.TotalHours >= 0)
+                 {
+                     ts1 = new TimeSpan(10, 0, 0);
+
+                 }
+                 else
+                 {
+                     ts1 = ts2.Add(new TimeSpan(10, 0, 0));
+                     ts2 = new TimeSpan(0, 0, 0);
+                 }*/
             try
-            {
-                TimeSpan ts3 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text));
-                TimeSpan ts2 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text) - (new TimeSpan(10, 0, 0)));
-                TimeSpan ts1 = new TimeSpan(10, 0, 0);
-                if (ts2.TotalHours >= 0)
-                {
-                    ts1 = new TimeSpan(10, 0, 0);
-
-                }
-                else
-                {
-                    ts1 = ts2.Add(new TimeSpan(10, 0, 0));
-                    ts2 = new TimeSpan(0, 0, 0);
-                }
-
-                var item = new Puantaj
+            { 
+            TimeSpan ts3 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text));
+            TimeSpan ts2 = (Convert.ToDateTime(textEdit2.Text) - Convert.ToDateTime(textEdit1.Text) - (new TimeSpan(10, 0, 0)));
+            var item = new Puantaj
                 {
                     id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id")),
                     giris_zaman = textEdit1.Text+":00",
                     cikis_zaman = textEdit2.Text+":00",
                     devamsizlik = comboBoxEdit1.Text,
-                    c_sure = ts1.Add(ts2).ToString(),
-                    mesai_sure = ts3.TotalHours,
-                    ucret = UcretHesapla(Convert.ToDecimal(ts1.TotalHours), Convert.ToDecimal(ts2.TotalHours)),
+                    c_sure = ts3.ToString(),
+                    mesai_sure = ts2.TotalHours,
+                    ek_mesai = 0,
+                    ucret = 0,
                     p_id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("p_id")),
-                };
-                if(item.devamsizlik=="Devamsız")
+                    tarih = gridView1.GetFocusedRowCellValue("tarih").ToString(),
+            };
+
+
+                if (gridView1.GetFocusedRowCellValue("devamsizlik").ToString() == "Tatil")
+                {
+                    item.ek_mesai = ts3.TotalHours;
+                    item.mesai_sure = 0;
+                }
+
+                if (gridView1.GetFocusedRowCellValue("devamsizlik").ToString() == "h.sonu")
+                {
+                    item.mesai_sure = ts3.TotalHours;
+
+                }
+
+
+
+
+                if (item.devamsizlik=="Devamsız")
                 {
                     item.ucret = 0;
                 };
@@ -305,7 +329,7 @@ namespace Demirciler
                         cikis_zaman = "17:30:00",
                         tarih = dt.ToString("dd.MM.yyyy"),
                         devamsizlik = "-",
-                        mesai_sure = 10,
+                        mesai_sure = 0,
                         c_sure = "10:00:00",
                         ucret = maas / 30,
                     };
@@ -316,6 +340,7 @@ namespace Demirciler
                         item.giris_zaman = "00:00:00";
                         item.cikis_zaman = "00:00:00";
                         item.mesai_sure = 0;
+                        item.ek_mesai = 0;
                     }
                     var result = db.insert_Puantaj(item);
                     }
@@ -354,11 +379,11 @@ namespace Demirciler
                 {
                     dvmszgun++;
                 }
-                if (gridView1.GetRowCellValue(i, "devamsizlik").ToString() == "tatil")
+                if (gridView1.GetRowCellValue(i, "devamsizlik").ToString() == "Tatil")
                 {
-                    tatil_mesai += Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString());
+                    tatil_mesai += Convert.ToDouble(gridView1.GetRowCellValue(i, "ek_mesai").ToString());
                 }
-                if (Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString()) > 10 || gridView1.GetRowCellValue(i, "devamsizlik").ToString() == "h.sonu")
+                if (Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString()) > 0 || gridView1.GetRowCellValue(i, "devamsizlik").ToString() == "h.sonu")
                 {
                     normal_mesai += Convert.ToDouble(gridView1.GetRowCellValue(i, "mesai_sure").ToString());
                 }
@@ -373,11 +398,17 @@ namespace Demirciler
             var res2 = (normal_mesai * 1.5) + (tatil_mesai * 2);
             toplamucret = (res1 * (Convert.ToDouble(maas) / 225))+ (res2*(Convert.ToDouble(maas)/225));
 
-            MessageBox.Show("Gelmediği gün :"+dvmszgun.ToString());
-            MessageBox.Show("Geç Kaldığı Süre :" + gec_satler.ToString());
-            MessageBox.Show("Maaş Ücreti :" + maas.ToString());
-            MessageBox.Show("aylik toplam ucret:" + toplamucret.ToString());
+            //MessageBox.Show("Gelmediği gün :"+dvmszgun.ToString());
+            //MessageBox.Show("Geç Kaldığı Süre :" + gec_satler.ToString());
+            //MessageBox.Show("Maaş Ücreti :" + maas.ToString());
+            //MessageBox.Show("aylik toplam ucret:" + toplamucret.ToString());
 
+            textEdit5.Text = (30-dvmszgun).ToString();
+            textEdit6.Text = dvmszgun.ToString();
+            textEdit7.Text = gec_satler.ToString();
+            textEdit8.Text = normal_mesai.ToString();
+            textEdit9.Text = tatil_mesai.ToString();
+            textEdit10.Text = toplamucret.ToString();
             //toplamsure = 
             //     db.GetPuantaj().Where(a => a.p_id == persid && Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())
             //               && Convert.ToDateTime(a.tarih) < Convert.ToDateTime(dt1.AddMonths(1).ToShortDateString())).Sum(a=> a.mesai_sure);

@@ -64,6 +64,18 @@
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.aylikmesai = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.isgunu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calisilangun.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpicker1.Properties)).BeginInit();
@@ -82,6 +94,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.aylik.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aylikmesai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // isgunu
@@ -193,10 +211,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(2, 120);
+            this.gridControl1.Location = new System.Drawing.Point(2, 155);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(672, 419);
+            this.gridControl1.Size = new System.Drawing.Size(672, 384);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -445,12 +463,130 @@
             this.labelControl12.TabIndex = 35;
             this.labelControl12.Text = "Aylık Yapılacak Mesai";
             // 
+            // textEdit5
+            // 
+            this.textEdit5.Enabled = false;
+            this.textEdit5.Location = new System.Drawing.Point(72, 129);
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(29, 20);
+            this.textEdit5.TabIndex = 36;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(3, 132);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(58, 13);
+            this.labelControl13.TabIndex = 37;
+            this.labelControl13.Text = "Çalıştığı Gün";
+            // 
+            // textEdit6
+            // 
+            this.textEdit6.Enabled = false;
+            this.textEdit6.Location = new System.Drawing.Point(180, 129);
+            this.textEdit6.Name = "textEdit6";
+            this.textEdit6.Size = new System.Drawing.Size(29, 20);
+            this.textEdit6.TabIndex = 38;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(107, 132);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(67, 13);
+            this.labelControl14.TabIndex = 39;
+            this.labelControl14.Text = "Devamsız Gün";
+            // 
+            // textEdit7
+            // 
+            this.textEdit7.Enabled = false;
+            this.textEdit7.Location = new System.Drawing.Point(291, 129);
+            this.textEdit7.Name = "textEdit7";
+            this.textEdit7.Size = new System.Drawing.Size(39, 20);
+            this.textEdit7.TabIndex = 40;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(215, 132);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(43, 13);
+            this.labelControl15.TabIndex = 41;
+            this.labelControl15.Text = "Geç Saat";
+            // 
+            // textEdit8
+            // 
+            this.textEdit8.Enabled = false;
+            this.textEdit8.Location = new System.Drawing.Point(410, 129);
+            this.textEdit8.Name = "textEdit8";
+            this.textEdit8.Size = new System.Drawing.Size(29, 20);
+            this.textEdit8.TabIndex = 42;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Location = new System.Drawing.Point(335, 132);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(69, 13);
+            this.labelControl16.TabIndex = 43;
+            this.labelControl16.Text = "Ek Mesai * 1,5";
+            // 
+            // textEdit9
+            // 
+            this.textEdit9.Enabled = false;
+            this.textEdit9.Location = new System.Drawing.Point(509, 129);
+            this.textEdit9.Name = "textEdit9";
+            this.textEdit9.Size = new System.Drawing.Size(29, 20);
+            this.textEdit9.TabIndex = 44;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Location = new System.Drawing.Point(445, 132);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(59, 13);
+            this.labelControl17.TabIndex = 45;
+            this.labelControl17.Text = "Ek Mesai * 2";
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Location = new System.Drawing.Point(539, 132);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(63, 13);
+            this.labelControl18.TabIndex = 47;
+            this.labelControl18.Text = "Toplam Ücret";
+            // 
+            // textEdit10
+            // 
+            this.textEdit10.Enabled = false;
+            this.textEdit10.Location = new System.Drawing.Point(608, 129);
+            this.textEdit10.Name = "textEdit10";
+            this.textEdit10.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEdit10.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEdit10.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit10.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textEdit10.Properties.MaskSettings.Set("mask", "c");
+            this.textEdit10.Properties.MaskSettings.Set("culture", "tr");
+            this.textEdit10.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.textEdit10.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textEdit10.Properties.ReadOnly = true;
+            this.textEdit10.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit10.Size = new System.Drawing.Size(66, 20);
+            this.textEdit10.TabIndex = 48;
+            // 
             // Puantaj_islemleri
             // 
             this.ActiveGlowColor = System.Drawing.Color.Gray;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 551);
+            this.Controls.Add(this.textEdit10);
+            this.Controls.Add(this.labelControl18);
+            this.Controls.Add(this.labelControl17);
+            this.Controls.Add(this.textEdit9);
+            this.Controls.Add(this.labelControl16);
+            this.Controls.Add(this.textEdit8);
+            this.Controls.Add(this.labelControl15);
+            this.Controls.Add(this.textEdit7);
+            this.Controls.Add(this.labelControl14);
+            this.Controls.Add(this.textEdit6);
+            this.Controls.Add(this.labelControl13);
+            this.Controls.Add(this.textEdit5);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.aylikmesai);
             this.Controls.Add(this.textEdit4);
@@ -505,6 +641,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.aylik.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aylikmesai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,5 +688,17 @@
         private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraEditors.TextEdit aylikmesai;
         private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.TextEdit textEdit8;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.TextEdit textEdit10;
     }
 }
