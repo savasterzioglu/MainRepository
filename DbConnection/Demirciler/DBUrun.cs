@@ -10,14 +10,14 @@ namespace Projects.DbConnection.Business.MSSQL
         {
             using (var db = GetDB())
             {
-                return db.ExecuteReader<urun>($"Select * From Siparis_Kayit").ToList();
+                return db.ExecuteReader<urun>($"Select * From urun").ToList();
             }
         }
-        public ResultStatus Update_urun(urun item)
+        public ResultStatus Update_urunByID(urun item)
         {
             using (var db = GetDB())
             {
-                return db.ExecuteUpdate<urun>(item);
+                return db.ExecuteUpdateByID<urun>(item);
             }
         }
 

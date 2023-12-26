@@ -358,17 +358,18 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class urun
     {
-        public string firma { get; set;}
-        public int Kimlik { get; set;}
-        public int? mkodu { get; set;}
-        public decimal? tekfiyat { get; set;}
-        public DateTime? tektarih { get; set;}
-        public string uaciklama { get; set;}
-        public string uadi { get; set;}
+        public int id { get; set; }
+        public int ukodu { get; set; }
+        public string uresimno { get; set; }
+        public int? mkodu { get; set; }
+        public string uadi { get; set; }
+        public string uaciklama { get; set; }
+        public decimal? tekfiyat { get; set; }
+        public DateTime? tektarih { get; set; }
         public int? uagirlik { get; set;}
-        public int ukodu { get; set;}
         public int? uolcu { get; set;}
-        public string uresimno { get; set;}
+        public string firma { get; set; }
+        public int Kimlik { get; set; }
     }
     public class Urun_islem
     {
