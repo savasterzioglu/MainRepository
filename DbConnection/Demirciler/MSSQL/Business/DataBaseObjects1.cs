@@ -27,6 +27,7 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class hmadde
     {
+        public int id { get; set; }
         public string Birim { get; set;}
         public string hmaciklama1 { get; set;}
         public string hmaciklama2 { get; set;}

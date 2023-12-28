@@ -45,6 +45,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
@@ -52,12 +53,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // textEdit1
             // 
             this.textEdit1.Location = new System.Drawing.Point(83, 12);
             this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit1.Properties.MaskSettings.Set("mask", "d");
             this.textEdit1.Size = new System.Drawing.Size(101, 20);
             this.textEdit1.TabIndex = 0;
             // 
@@ -166,6 +171,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(59, 23);
             this.simpleButton1.TabIndex = 15;
             this.simpleButton1.Text = "Kaydet";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
@@ -174,6 +180,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(59, 23);
             this.simpleButton2.TabIndex = 16;
             this.simpleButton2.Text = "Güncelle";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton3
             // 
@@ -182,12 +189,26 @@
             this.simpleButton3.Size = new System.Drawing.Size(59, 23);
             this.simpleButton3.TabIndex = 17;
             this.simpleButton3.Text = "Sil";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(393, 12);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Size = new System.Drawing.Size(100, 20);
+            this.dateEdit1.TabIndex = 18;
             // 
             // Urun_Girisi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 380);
+            this.Controls.Add(this.dateEdit1);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
@@ -211,6 +232,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +256,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
     }
 }
 
