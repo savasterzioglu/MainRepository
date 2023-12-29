@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Demirciler\BaseModel.cs" />
+    <Compile Include="Demirciler\DBUrun_Mamul.cs" />
     <Compile Include="Demirciler\DBtest3.cs" />
     <Compile Include="Demirciler\DBhmadde.cs" />
     <Compile Include="Demirciler\MSSQL\Business\DataBaseObjects1.cs" />

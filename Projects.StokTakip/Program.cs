@@ -18,7 +18,7 @@ namespace Projects.StokTakip
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ham_madde());
+            Application.Run(new Urun_Agaci());
         }
     }
 }

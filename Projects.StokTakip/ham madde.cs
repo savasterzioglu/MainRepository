@@ -21,8 +21,8 @@ namespace Projects.StokTakip
         public ham_madde()
         {
             InitializeComponent();
-            gridControl1.DataSource = db.GetHmadde();
-            gridView1.BestFitColumns();
+            grid_doldur();
+            
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -50,7 +50,8 @@ namespace Projects.StokTakip
         {
             item_Doldur();
             var result = db.insert_Hmadde(item);
-
+            grid_doldur();
+            MessageBox.Show("Kaydedildi.");
         }
 
         void item_Doldur()
@@ -62,9 +63,9 @@ namespace Projects.StokTakip
             item.satisfiyat2 = Convert.ToDecimal(textEdit5.Text);
             item.hmaciklama2 = textEdit6.Text;
 
-            item.hmturid = Convert.ToDouble(comboBoxEdit1.Text);
-            item.hmkaliteid = Convert.ToDouble(comboBoxEdit2.Text);
-            item.hmolcuid = Convert.ToInt32(comboBoxEdit3.Text);
+            item.hmturid = Convert.ToDouble(comboBoxEdit1.Text == "" ? "0":comboBoxEdit1.Text);
+            item.hmkaliteid = Convert.ToDouble(comboBoxEdit2.Text == "" ? "0":comboBoxEdit2.Text);
+            item.hmolcuid = Convert.ToInt32(comboBoxEdit3.Text == "" ? "0":comboBoxEdit3.Text);
             item.hmtedarik = comboBoxEdit4.Text;
         }
 
@@ -75,6 +76,8 @@ namespace Projects.StokTakip
                 item_Doldur();
                 item.id = id;
                 var result = db.Update_HmaddeByID(item);
+                grid_doldur();
+                MessageBox.Show("Kayıt Günellendi.");
             }
             else { MessageBox.Show("Kayıt Seçilmedi."); }
 
@@ -86,8 +89,17 @@ namespace Projects.StokTakip
             {
                 item.id = id;
                 var result = db.delete_HmaddeByID(item);
+                grid_doldur();
+                MessageBox.Show("Kayıt Silindi.");
             }
             else { MessageBox.Show("Kayıt Seçilmedi."); }
+        }
+
+        void grid_doldur()
+        {
+            gridControl1.DataSource = null;
+            gridControl1.DataSource = db.GetHmadde();
+            gridView1.BestFitColumns();
         }
     }
 }
