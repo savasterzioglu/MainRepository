@@ -18,7 +18,7 @@ namespace Projects.StokTakip
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Urun_Agaci());
+            Application.Run(new Sabit_Param());
         }
     }
 }

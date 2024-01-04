@@ -237,9 +237,9 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class Sabit_Parametreler
     {
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public string Parametre_adi { get; set;}
-        public int? Parametre_fiyat { get; set;}
+        public decimal Parametre_fiyat { get; set;}
     }
     public class Sayfa2
     {

@@ -64,5 +64,11 @@ namespace Projects.StokTakip
             item.mkodu = Convert.ToInt32(textEdit2.Text);
             item.uaciklama = "";
         }
+
+        private void Urun_Girisi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Urun_Sec frm = this.Owner as Urun_Sec;
+            this.Close();
+        }
     }
 }

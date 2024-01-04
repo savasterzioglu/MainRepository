@@ -38,20 +38,22 @@ namespace Projects.StokTakip
             _urun.ukodu = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ukodu")); 
             _urun.uresimno = gridView1.GetFocusedRowCellValue("uresimno").ToString(); 
             _urun.uadi = gridView1.GetFocusedRowCellValue("uadi").ToString(); ;
-
-
             /*
             _Pers.P_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id"));
             _Pers.P_ad = gridView2.GetFocusedRowCellValue("P_ad").ToString();
             _Pers.P_soyad = gridView2.GetFocusedRowCellValue("P_soyad").ToString();
             _Pers.P_ucret = Convert.ToDecimal(gridView2.GetFocusedRowCellValue("P_ucret").ToString());
             */
-
-
             Urun_Agaci frm = this.Owner as Urun_Agaci;
             frm.formac(_urun);
             this.Close();
 
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Urun_Girisi frm = new Urun_Girisi();
+            frm.ShowDialog(this);
         }
     }
 }

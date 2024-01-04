@@ -65,6 +65,11 @@ namespace Projects.StokTakip
             frm._urun.mkodu = 0;
             frm.ShowDialog(this);
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     public class urun_agaci_liste
     {
