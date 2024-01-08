@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -57,13 +57,13 @@
             // 
             // gridView1
             // 
-            gridFormatRule2.ApplyToRow = true;
-            gridFormatRule2.Name = "Format0";
-            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue2.PredefinedName = "Green Fill";
-            formatConditionRuleValue2.Value1 = "h.sonu";
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            this.gridView1.FormatRules.Add(gridFormatRule2);
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue1.PredefinedName = "Green Fill";
+            formatConditionRuleValue1.Value1 = "h.sonu";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -94,15 +94,6 @@
             this.labelControl2.TabIndex = 19;
             this.labelControl2.Text = "Param Değer";
             // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(113, 244);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit2.Properties.MaskSettings.Set("mask", "c");
-            this.textEdit2.Size = new System.Drawing.Size(100, 20);
-            this.textEdit2.TabIndex = 18;
-            // 
             // simpleButton1
             // 
             this.simpleButton1.Location = new System.Drawing.Point(219, 220);
@@ -121,15 +112,33 @@
             this.simpleButton2.Text = "Sil";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // textEdit2
+            // 
+            this.textEdit2.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textEdit2.Location = new System.Drawing.Point(113, 246);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEdit2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit2.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textEdit2.Properties.MaskSettings.Set("mask", "c");
+            this.textEdit2.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit2.Size = new System.Drawing.Size(100, 20);
+            this.textEdit2.TabIndex = 22;
+            // 
             // Sabit_Param
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 276);
+            this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.gridControl1);
@@ -152,8 +161,8 @@
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
     }
 }

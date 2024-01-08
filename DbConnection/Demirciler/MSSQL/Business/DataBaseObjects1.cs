@@ -239,7 +239,7 @@ namespace Projects.DbConnection.Business.MSSQL
     {
         public int id { get; set;}
         public string Parametre_adi { get; set;}
-        public decimal Parametre_fiyat { get; set;}
+        public decimal? Parametre_fiyat { get; set;}
     }
     public class Sayfa2
     {
