@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Projects.DbConnection.Business.MSSQL;
 
 
 namespace Projects.StokTakip
 {
-    
+
     public partial class Urun_Girisi : DevExpress.XtraEditors.XtraForm
     {
         DemircilerDB db = new DemircilerDB();

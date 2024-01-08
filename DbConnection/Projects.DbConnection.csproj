@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Demirciler\BaseModel.cs" />
+    <Compile Include="Demirciler\DBMamul.cs" />
+    <Compile Include="Demirciler\DBUretim_Islem.cs" />
     <Compile Include="Demirciler\DBUrun_Mamul.cs" />
     <Compile Include="Demirciler\DBtest3.cs" />
     <Compile Include="Demirciler\DBhmadde.cs" />

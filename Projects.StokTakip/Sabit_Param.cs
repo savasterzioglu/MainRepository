@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using Projects.DbConnection.Business.MSSQL;
 
 
@@ -37,7 +29,7 @@ namespace Projects.StokTakip
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            double sayi = 3.5;
+            //double sayi = 3.5;
             item.Parametre_adi = textEdit1.Text;
             item.Parametre_fiyat = Convert.ToDecimal(textEdit2.EditValue.ToString().Replace(".",","));
             //sayi = Convert.ToDecimal(textEdit2.Text);
