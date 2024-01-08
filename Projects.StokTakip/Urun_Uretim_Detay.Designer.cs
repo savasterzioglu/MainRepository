@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -125,13 +125,13 @@
             // 
             // gridView1
             // 
-            gridFormatRule3.ApplyToRow = true;
-            gridFormatRule3.Name = "Format0";
-            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue3.PredefinedName = "Green Fill";
-            formatConditionRuleValue3.Value1 = "h.sonu";
-            gridFormatRule3.Rule = formatConditionRuleValue3;
-            this.gridView1.FormatRules.Add(gridFormatRule3);
+            gridFormatRule2.ApplyToRow = true;
+            gridFormatRule2.Name = "Format0";
+            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue2.PredefinedName = "Green Fill";
+            formatConditionRuleValue2.Value1 = "h.sonu";
+            gridFormatRule2.Rule = formatConditionRuleValue2;
+            this.gridView1.FormatRules.Add(gridFormatRule2);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -141,6 +141,7 @@
             // 
             // textEdit1
             // 
+            this.textEdit1.Enabled = false;
             this.textEdit1.Location = new System.Drawing.Point(434, 12);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(68, 20);
@@ -148,6 +149,7 @@
             // 
             // textEdit2
             // 
+            this.textEdit2.Enabled = false;
             this.textEdit2.Location = new System.Drawing.Point(434, 38);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(68, 20);
@@ -155,6 +157,7 @@
             // 
             // textEdit3
             // 
+            this.textEdit3.Enabled = false;
             this.textEdit3.Location = new System.Drawing.Point(434, 64);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(68, 20);
@@ -162,6 +165,7 @@
             // 
             // textEdit4
             // 
+            this.textEdit4.Enabled = false;
             this.textEdit4.Location = new System.Drawing.Point(434, 90);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Size = new System.Drawing.Size(68, 20);
@@ -169,6 +173,7 @@
             // 
             // textEdit5
             // 
+            this.textEdit5.Enabled = false;
             this.textEdit5.Location = new System.Drawing.Point(434, 116);
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Size = new System.Drawing.Size(68, 20);
@@ -176,6 +181,7 @@
             // 
             // textEdit6
             // 
+            this.textEdit6.Enabled = false;
             this.textEdit6.Location = new System.Drawing.Point(434, 142);
             this.textEdit6.Name = "textEdit6";
             this.textEdit6.Size = new System.Drawing.Size(68, 20);
@@ -183,6 +189,7 @@
             // 
             // textEdit7
             // 
+            this.textEdit7.Enabled = false;
             this.textEdit7.Location = new System.Drawing.Point(434, 168);
             this.textEdit7.Name = "textEdit7";
             this.textEdit7.Size = new System.Drawing.Size(68, 20);
@@ -190,6 +197,7 @@
             // 
             // textEdit8
             // 
+            this.textEdit8.Enabled = false;
             this.textEdit8.Location = new System.Drawing.Point(434, 194);
             this.textEdit8.Name = "textEdit8";
             this.textEdit8.Size = new System.Drawing.Size(68, 20);
@@ -197,6 +205,7 @@
             // 
             // textEdit9
             // 
+            this.textEdit9.Enabled = false;
             this.textEdit9.Location = new System.Drawing.Point(435, 220);
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Size = new System.Drawing.Size(67, 20);
@@ -204,6 +213,7 @@
             // 
             // textEdit10
             // 
+            this.textEdit10.Enabled = false;
             this.textEdit10.Location = new System.Drawing.Point(434, 246);
             this.textEdit10.Name = "textEdit10";
             this.textEdit10.Size = new System.Drawing.Size(68, 20);
@@ -211,6 +221,7 @@
             // 
             // textEdit11
             // 
+            this.textEdit11.Enabled = false;
             this.textEdit11.Location = new System.Drawing.Point(434, 272);
             this.textEdit11.Name = "textEdit11";
             this.textEdit11.Size = new System.Drawing.Size(68, 20);
@@ -218,6 +229,7 @@
             // 
             // textEdit12
             // 
+            this.textEdit12.Enabled = false;
             this.textEdit12.Location = new System.Drawing.Point(434, 298);
             this.textEdit12.Name = "textEdit12";
             this.textEdit12.Size = new System.Drawing.Size(68, 20);
@@ -227,6 +239,10 @@
             // 
             this.textEdit13.Location = new System.Drawing.Point(124, 324);
             this.textEdit13.Name = "textEdit13";
+            this.textEdit13.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit13.Properties.MaskSettings.Set("mask", "d");
+            this.textEdit13.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textEdit13.Properties.UseMaskAsDisplayFormat = true;
             this.textEdit13.Size = new System.Drawing.Size(68, 20);
             this.textEdit13.TabIndex = 28;
             // 
@@ -234,6 +250,9 @@
             // 
             this.textEdit14.Location = new System.Drawing.Point(124, 350);
             this.textEdit14.Name = "textEdit14";
+            this.textEdit14.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
+            this.textEdit14.Properties.MaskSettings.Set("mask", "T");
+            this.textEdit14.Properties.UseMaskAsDisplayFormat = true;
             this.textEdit14.Size = new System.Drawing.Size(68, 20);
             this.textEdit14.TabIndex = 29;
             // 
@@ -241,6 +260,9 @@
             // 
             this.textEdit15.Location = new System.Drawing.Point(124, 376);
             this.textEdit15.Name = "textEdit15";
+            this.textEdit15.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit15.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textEdit15.Properties.MaskSettings.Set("mask", "f3");
             this.textEdit15.Size = new System.Drawing.Size(68, 20);
             this.textEdit15.TabIndex = 30;
             // 
@@ -255,6 +277,9 @@
             // 
             this.textEdit17.Location = new System.Drawing.Point(124, 428);
             this.textEdit17.Name = "textEdit17";
+            this.textEdit17.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit17.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textEdit17.Properties.MaskSettings.Set("mask", "c");
             this.textEdit17.Size = new System.Drawing.Size(68, 20);
             this.textEdit17.TabIndex = 32;
             // 
@@ -262,6 +287,9 @@
             // 
             this.textEdit18.Location = new System.Drawing.Point(319, 324);
             this.textEdit18.Name = "textEdit18";
+            this.textEdit18.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit18.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textEdit18.Properties.MaskSettings.Set("mask", "d");
             this.textEdit18.Size = new System.Drawing.Size(68, 20);
             this.textEdit18.TabIndex = 33;
             // 
@@ -269,6 +297,9 @@
             // 
             this.textEdit19.Location = new System.Drawing.Point(319, 350);
             this.textEdit19.Name = "textEdit19";
+            this.textEdit19.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit19.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textEdit19.Properties.MaskSettings.Set("mask", "d");
             this.textEdit19.Size = new System.Drawing.Size(68, 20);
             this.textEdit19.TabIndex = 34;
             // 
@@ -276,6 +307,9 @@
             // 
             this.textEdit20.Location = new System.Drawing.Point(319, 376);
             this.textEdit20.Name = "textEdit20";
+            this.textEdit20.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
+            this.textEdit20.Properties.MaskSettings.Set("mask", "T");
+            this.textEdit20.Properties.UseMaskAsDisplayFormat = true;
             this.textEdit20.Size = new System.Drawing.Size(68, 20);
             this.textEdit20.TabIndex = 35;
             // 
@@ -457,17 +491,17 @@
             // 
             this.labelControl21.Location = new System.Drawing.Point(319, 275);
             this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(69, 13);
+            this.labelControl21.Size = new System.Drawing.Size(103, 13);
             this.labelControl21.TabIndex = 58;
-            this.labelControl21.Text = "labelControl21";
+            this.labelControl21.Text = "Toplam Parca Maliyeti";
             // 
             // labelControl22
             // 
             this.labelControl22.Location = new System.Drawing.Point(319, 301);
             this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(69, 13);
+            this.labelControl22.Size = new System.Drawing.Size(92, 13);
             this.labelControl22.TabIndex = 59;
-            this.labelControl22.Text = "labelControl22";
+            this.labelControl22.Text = "Parca Adet Maliyeti";
             // 
             // gridControl2
             // 
@@ -484,13 +518,13 @@
             // 
             // gridView2
             // 
-            gridFormatRule1.ApplyToRow = true;
-            gridFormatRule1.Name = "Format0";
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue1.PredefinedName = "Green Fill";
-            formatConditionRuleValue1.Value1 = "h.sonu";
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            this.gridView2.FormatRules.Add(gridFormatRule1);
+            gridFormatRule3.ApplyToRow = true;
+            gridFormatRule3.Name = "Format0";
+            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue3.PredefinedName = "Green Fill";
+            formatConditionRuleValue3.Value1 = "h.sonu";
+            gridFormatRule3.Rule = formatConditionRuleValue3;
+            this.gridView2.FormatRules.Add(gridFormatRule3);
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;

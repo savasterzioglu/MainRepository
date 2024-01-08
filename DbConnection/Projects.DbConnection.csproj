@@ -53,6 +53,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Demirciler\BaseModel.cs" />
+    <Compile Include="Demirciler\DBIsil_Islem.cs" />
+    <Compile Include="Demirciler\DBPres_Islem.cs" />
+    <Compile Include="Demirciler\DBTaslama_Islem.cs" />
+    <Compile Include="Demirciler\DBMontaj_Islem.cs" />
+    <Compile Include="Demirciler\DBKaplama_Islem.cs" />
+    <Compile Include="Demirciler\DBKaynak_Islem.cs" />
+    <Compile Include="Demirciler\DBBukum_Islem.cs" />
+    <Compile Include="Demirciler\DBDik_Islem.cs" />
+    <Compile Include="Demirciler\DBTorna_Islem.cs" />
+    <Compile Include="Demirciler\DBLazer_Islem.cs" />
     <Compile Include="Demirciler\DBMamul.cs" />
     <Compile Include="Demirciler\DBUretim_Islem.cs" />
     <Compile Include="Demirciler\DBUrun_Mamul.cs" />

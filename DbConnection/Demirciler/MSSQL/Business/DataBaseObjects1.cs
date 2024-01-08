@@ -6,7 +6,7 @@ namespace Projects.DbConnection.Business.MSSQL
 {
 	    public class dik_islem
     {
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
     }
@@ -120,7 +120,7 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class isil_islem
     {
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
     }
@@ -133,15 +133,15 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class kaplama_islem
     {
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
     }
     public class kaynak_islem
     {
-        public DateTime? hazirlik { get; set;}
+        public string hazirlik { get; set;}
         public int? kalinlik { get; set;}
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
         public int? uzunluk { get; set;}
@@ -163,10 +163,10 @@ namespace Projects.DbConnection.Business.MSSQL
     public class lazer_islem
     {
         public decimal? agirlik { get; set;}
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public int? plakaboyut { get; set;}
         public int? toplamadet { get; set;}
-        public DateTime? toplamsure { get; set;}
+        public string toplamsure { get; set;}
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
     }
@@ -184,7 +184,7 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class montaj_islem
     {
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
     }
@@ -217,8 +217,8 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class Pres_islem
     {
-        public int Kimlik { get; set;}
-        public int? sure { get; set;}
+        public int id { get; set;}
+        public string sure { get; set;}
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
     }
@@ -284,8 +284,8 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class taslama_islem
     {
-        public int Kimlik { get; set;}
-        public int? sure { get; set;}
+        public int id { get; set;}
+        public string sure { get; set;}
         public decimal? ucret { get; set;}
         public int? ukod { get; set;}
     }
@@ -304,7 +304,7 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class torna_islem
     {
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public int? ucret { get; set;}
         public int? ukod { get; set;}
     }
@@ -445,14 +445,14 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class mamul
     {
-        public string hmkod { get; set;}
-        public string hmmiktar { get; set;}
-        public string Kimlik { get; set;}
+        public int hmkod { get; set;}
+        public int hmmiktar { get; set;}
+        public int id { get; set;}
         public string parcaadi { get; set;}
         public string parcafirmakod { get; set;}
-        public string parcafiyat { get; set;}
+        public decimal parcafiyat { get; set;}
         public string parcaturu { get; set;}
-        public string ukod { get; set;}
+        public int ukod { get; set;}
         public string uretimdurum { get; set;}
     }
     public class Durum
@@ -462,9 +462,9 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class bukum_islem
     {
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public decimal? ucret { get; set;}
-        public string ukod { get; set;}
+        public int ukod { get; set;}
     }
 
 }
