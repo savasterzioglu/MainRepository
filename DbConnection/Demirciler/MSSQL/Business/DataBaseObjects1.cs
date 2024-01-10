@@ -375,7 +375,7 @@ namespace Projects.DbConnection.Business.MSSQL
     public class Urun_islem
     {
         public int? islem { get; set;}
-        public int Kimlik { get; set;}
+        public int id { get; set;}
         public int? stokkod { get; set;}
         public int? ukod { get; set;}
         public string uresimno { get; set;}

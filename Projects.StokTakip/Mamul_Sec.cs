@@ -14,13 +14,13 @@ using Projects.DbConnection.Business.MSSQL;
 namespace Projects.StokTakip
 {
 
-    public partial class Mamul_Sec1 : DevExpress.XtraEditors.XtraForm
+    public partial class Mamul_Sec : DevExpress.XtraEditors.XtraForm
     {
         public DemircilerDB db = new DemircilerDB();
 
         public mamul _urun = new mamul();
 
-        public Mamul_Sec1()
+        public Mamul_Sec()
         {
             InitializeComponent();
             grid_doldur();
@@ -36,8 +36,15 @@ namespace Projects.StokTakip
             //var _urun = new urun();
             _urun.id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id"));
             _urun.ukod = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ukod"));
-            //_urun. = gridView1.GetFocusedRowCellValue("uresimno").ToString();
-            _urun.parcaadi = gridView1.GetFocusedRowCellValue("parcaadi").ToString(); ;
+            _urun.parcaadi = gridView1.GetFocusedRowCellValue("uresimno").ToString();
+
+            var _urunislem = new Urun_islem();
+            _urunislem.id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id"));
+            _urunislem.ukod = 0;
+            _urunislem.uresimno = "";
+         
+
+            //_urun.parcaadi = gridView1.GetFocusedRowCellValue("parcaadi").ToString(); ;
             /*
             _Pers.P_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id"));
             _Pers.P_ad = gridView2.GetFocusedRowCellValue("P_ad").ToString();

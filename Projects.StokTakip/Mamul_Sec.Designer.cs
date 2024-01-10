@@ -1,6 +1,6 @@
 ﻿namespace Projects.StokTakip
 {
-    partial class Mamul_Sec1
+    partial class Mamul_Sec
     {
         /// <summary>
         /// Required designer variable.

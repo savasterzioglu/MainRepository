@@ -24,6 +24,9 @@ namespace Demirciler
             InitializeComponent();
 
             ControlActive(0);
+            //gridControl1.DataSource = "";
+            gridControl1.DataSource = db.GetPuantaj().Where(a=> a.p_id == 9 ).ToList() ;
+            //gridView1. = null;
         }
 
         void gunleridoldur(DateTime dt)
@@ -54,8 +57,11 @@ namespace Demirciler
 
         void GridDoldur(int p_id, DateTime dt1)
         {
+            
+
             gridControl1.DataSource = db.GetPuantaj().Where(a => a.p_id == persid && Convert.ToDateTime(a.tarih) >= Convert.ToDateTime(dt1.ToShortDateString())         
              && Convert.ToDateTime(a.tarih) < Convert.ToDateTime(dt1.AddMonths(1).ToShortDateString()));
+
             GridFormatRule GFR = new GridFormatRule();
             GFR.Column = gridView1.Columns["devamsizlik"];
             gridView1.FormatRules["Format0"].Column = GFR.Column;
@@ -130,8 +136,10 @@ namespace Demirciler
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             //Form frm = new Personel_islemleri();
-           Personel_Sec frm = new Personel_Sec();
+            Personel_Sec frm = new Personel_Sec();
             frm.ShowDialog(this);
+            
+            
         }
 
         private void dtpicker2_DateTimeChanged(object sender, EventArgs e)
@@ -309,9 +317,9 @@ namespace Demirciler
                 for (int i=1; i<= Convert.ToInt32(isgunu.Text); i++)
                 {
 
-                    DateTime dt = new DateTime(2023,dtpicker1.DateTime.Month,i);
-
-                    if (db.GetPuantaj().Where(a => a.tarih == dt.ToShortDateString()).Count() == 0)
+                    DateTime dt = new DateTime(dtpicker1.DateTime.Year,dtpicker1.DateTime.Month,i);
+                    
+                    if (db.GetPuantaj().Where(a => a.tarih == dt.ToString("dd.MM.yyyy") && a.p_id == persid).Count() == 0)
                     {
                     var item = new Puantaj
                     {
@@ -335,8 +343,11 @@ namespace Demirciler
                     }
                     var result = db.insert_Puantaj(item);
                     }
-                    else { MessageBox.Show("Seçili personelin" + dt.ToShortDateString() + "tarihinde kaydı mevcuttur."); }
+                    else { MessageBox.Show("Seçili personelin " + dt.ToString("dd.MM.yyyy") + " tarihinde kaydı mevcuttur.");
+                    //MessageBox.Show(db.GetPuantaj().Select(a=> a.p_id).ToString().Where(a=> ));
                 }
+
+            }
             dtpicker1_DateTimeChanged(sender, e);
         }
 

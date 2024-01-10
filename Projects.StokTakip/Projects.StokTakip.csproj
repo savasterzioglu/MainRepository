@@ -66,11 +66,11 @@
     <Compile Include="ham madde.Designer.cs">
       <DependentUpon>ham madde.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mamul_Sec1.cs">
+    <Compile Include="Mamul_Sec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mamul_Sec1.Designer.cs">
-      <DependentUpon>Mamul_Sec1.cs</DependentUpon>
+    <Compile Include="Mamul_Sec.Designer.cs">
+      <DependentUpon>Mamul_Sec.cs</DependentUpon>
     </Compile>
     <Compile Include="Sabit_Param.cs">
       <SubType>Form</SubType>
@@ -113,8 +113,8 @@
     <EmbeddedResource Include="ham madde.resx">
       <DependentUpon>ham madde.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mamul_Sec1.resx">
-      <DependentUpon>Mamul_Sec1.cs</DependentUpon>
+    <EmbeddedResource Include="Mamul_Sec.resx">
+      <DependentUpon>Mamul_Sec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Sabit_Param.resx">

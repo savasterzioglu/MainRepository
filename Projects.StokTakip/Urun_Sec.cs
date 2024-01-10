@@ -9,6 +9,8 @@ namespace Projects.StokTakip
         public DemircilerDB db = new DemircilerDB();
 
         public urun _urun = new urun();
+
+        public mamul _mamul = new mamul();
         public Urun_Sec()
         {
             InitializeComponent();
@@ -29,6 +31,9 @@ namespace Projects.StokTakip
             _urun.ukodu = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ukodu")); 
             _urun.uresimno = gridView1.GetFocusedRowCellValue("uresimno").ToString(); 
             _urun.uadi = gridView1.GetFocusedRowCellValue("uadi").ToString(); ;
+
+            _mamul.parcaadi = _urun.uadi;
+            _mamul.ukod = _urun.ukodu;
             /*
             _Pers.P_id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("P_id"));
             _Pers.P_ad = gridView2.GetFocusedRowCellValue("P_ad").ToString();
