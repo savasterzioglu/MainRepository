@@ -29,9 +29,13 @@ namespace Demirciler
                 p_telefon = textEdit5.Text,
                 p_dtarihi = dateEdit1.Text,           
             };
-
-            var result = db.insert_Personel(item);
-            GridDoldur();
+            if (db.GetPersonel().Where(a => a.P_id == item.P_id).Count() == 0)
+            {
+                var result = db.insert_Personel(item);
+                GridDoldur();
+            }
+            else { MessageBox.Show( item.P_id.ToString() + " TC Kimlik Numarası Kullanılıyor. "); }
+            
         }
 
         void GridDoldur()

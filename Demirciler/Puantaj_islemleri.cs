@@ -12,7 +12,7 @@ namespace Demirciler
     {
         public DemircilerDB db = new DemircilerDB();
         public decimal maas = 0;
-        public int persid = 0; 
+        public decimal persid = 0; 
         public static string[] holidays =new string[32];
 
         public DialogResult dialogResult { get; private set; }
@@ -25,7 +25,6 @@ namespace Demirciler
 
             ControlActive(0);
             //gridControl1.DataSource = "";
-            gridControl1.DataSource = db.GetPuantaj().Where(a=> a.p_id == 9 ).ToList() ;
             //gridView1. = null;
         }
 
@@ -55,7 +54,7 @@ namespace Demirciler
             calisilangun.Text = calisilan_gun.ToString();  
         }
 
-        void GridDoldur(int p_id, DateTime dt1)
+        void GridDoldur(decimal p_id, DateTime dt1)
         {
             
 
@@ -366,6 +365,8 @@ namespace Demirciler
             persid = _Pers.P_id;
             maas = _Pers.P_ucret;
             dtpicker1.Enabled = true;
+            gridControl1.DataSource = db.GetPuantaj().Where(a => a.p_id == 9).ToList();
+            dtpicker1.EditValue = null;
         }
         public void maas_hesap(DateTime dt1)
         {

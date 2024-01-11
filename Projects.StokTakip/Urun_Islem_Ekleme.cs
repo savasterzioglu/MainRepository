@@ -145,7 +145,7 @@ namespace Projects.StokTakip
                 case 3:
                     var _islem3 = new torna_islem();
                     _islem3.ukod = Convert.ToInt32(textEdit1.Text);
-                    _islem3.ucret = Convert.ToDecimal(ucret.Text);
+                    //_islem3.ucret = Convert.ToDecimal(ucret.Text);
                     var result3 = db.insert_Torna_Islem(_islem3);
                     break;
                 case 4:
@@ -191,7 +191,7 @@ namespace Projects.StokTakip
                     var _islem10 = new Pres_islem();
                     _islem10.ukod = Convert.ToInt32(textEdit1.Text);
                     _islem10.ucret = Convert.ToDecimal(ucret.Text);
-                    var result10 = db.insert_Pres_Islem(_islem10);
+                    //var result10 = db.insert_Pres_Islem(_islem10);
 
                     break;
             }
@@ -199,8 +199,8 @@ namespace Projects.StokTakip
             var _urunislem = new Urun_islem();
             _urunislem.ukod = Convert.ToInt32(textEdit1.Text);
             _urunislem.uresimno = "";
-            _urunislem.islem = Convert.ToInt32(lookUpEdit1.EditValue.ToString();
-            var result10 = db.insert_Pres_Islem(_urunislem);
+            //_urunislem.islem = Convert.ToInt32(lookUpEdit1.EditValue.ToString();
+            //var result10 = db.insert_Pres_Islem(_urunislem);
 
 
         }
