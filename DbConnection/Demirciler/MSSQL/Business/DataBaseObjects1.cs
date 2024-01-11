@@ -4,7 +4,19 @@
 using System;
 namespace Projects.DbConnection.Business.MSSQL
 {
-	    public class dik_islem
+    public class islemler
+    {
+        public int id { get; set; }
+        public int ukod { get; set; }
+        public string toplamsure { get; set; }
+        public string sure { get; set; }
+        public int toplamadet { get; set; }
+        public int agirlik { get; set; }
+        public int uzunluk { get; set; }
+        public decimal ucret { get; set; }
+    }
+
+    public class dik_islem
     {
         public int id { get; set;}
         public decimal? ucret { get; set;}
@@ -148,8 +160,8 @@ namespace Projects.DbConnection.Business.MSSQL
     }
     public class kesim_islem
     {
-        public DateTime? kesimsure { get; set;}
-        public int Kimlik { get; set;}
+        public string kesimsure { get; set;}
+        public int id { get; set;}
         public int? parca_boy { get; set;}
         public int? ukod { get; set;}
     }
@@ -305,7 +317,7 @@ namespace Projects.DbConnection.Business.MSSQL
     public class torna_islem
     {
         public int id { get; set;}
-        public int? ucret { get; set;}
+        public decimal ucret { get; set;}
         public int? ukod { get; set;}
     }
     public class uretim_islem

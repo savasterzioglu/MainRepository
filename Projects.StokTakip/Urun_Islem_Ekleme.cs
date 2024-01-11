@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using Projects.DbConnection.Business.MSSQL;
-
+using System.Windows.Forms;
+using System.Linq;
 
 namespace Projects.StokTakip
 {
@@ -28,12 +20,13 @@ namespace Projects.StokTakip
             lookUpEdit1.Text = "";
             lookUpEdit1.Properties.DisplayMember = "islem";
             lookUpEdit1.Properties.ValueMember = "Kimlik";
-            gridControl1.DataSource = db.GetMamul();
+            //gridControl1.DataSource = db.GetMamul();
             gridView1.BestFitColumns();
         }
 
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
+            gridControl1.DataSource = db.GetIslemler().Where(a=> a.ukod == Convert.ToInt32(textEdit1.Text));
             int a=0;
             if (lookUpEdit1.EditValue.ToString() != "")
             {
@@ -91,14 +84,17 @@ namespace Projects.StokTakip
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(lookUpEdit1.Properties.Columns[0].ToString());
             Mamul_Sec frm = new Mamul_Sec();
             frm.ShowDialog(this);
+
         }
 
         public void formac(mamul _urun)
         {
                 textEdit1.Text = _urun.ukod.ToString();
                 textEdit2.Text = _urun.parcaadi;
+              ////  gridControl1.DataSource = db.geturu
             //textad.EditValue = _Pers.P_ad;
             //textsoyad.Text = _Pers.P_soyad;
             //persid = _Pers.P_id;
@@ -145,7 +141,7 @@ namespace Projects.StokTakip
                 case 3:
                     var _islem3 = new torna_islem();
                     _islem3.ukod = Convert.ToInt32(textEdit1.Text);
-                    //_islem3.ucret = Convert.ToDecimal(ucret.Text);
+                    _islem3.ucret = Convert.ToDecimal(ucret.Text);
                     var result3 = db.insert_Torna_Islem(_islem3);
                     break;
                 case 4:
@@ -191,19 +187,24 @@ namespace Projects.StokTakip
                     var _islem10 = new Pres_islem();
                     _islem10.ukod = Convert.ToInt32(textEdit1.Text);
                     _islem10.ucret = Convert.ToDecimal(ucret.Text);
-                    //var result10 = db.insert_Pres_Islem(_islem10);
-
+                    var result10 = db.insert_Pres_Islem(_islem10);
+                    break;
+                case 11:
+                    var _islem11 = new kesim_islem();
+                    _islem11.ukod = Convert.ToInt32(textEdit1.Text);
+                    _islem11.kesimsure = topsure.Text;
+                    _islem11.parca_boy = Convert.ToInt32(uzunluk.Text);
+                    //_islem11.ka = Convert.ToDecimal(ucret.Text);
+                    var result11 = db.insert_Kesim_Islem(_islem11);
                     break;
             }
 
             var _urunislem = new Urun_islem();
             _urunislem.ukod = Convert.ToInt32(textEdit1.Text);
             _urunislem.uresimno = "";
-            //_urunislem.islem = Convert.ToInt32(lookUpEdit1.EditValue.ToString();
-            //var result10 = db.insert_Pres_Islem(_urunislem);
-
-
-        }
+            _urunislem.islem = Convert.ToInt32(lookUpEdit1.EditValue.ToString());
+           var result = db.insert_Urun_Islem(_urunislem);
+        }                                             
 
         void islem_degistirme()
         {
@@ -226,13 +227,17 @@ namespace Projects.StokTakip
                     break;
             }
 
-
             if (a != 1 && a != 5 && a != 9 && a != 10)
             {
                 ucret.Enabled = true;
             }
         }
 
+        private void Urun_Islem_Ekleme_Load(object sender, EventArgs e)
+        {
+            lookUpEdit1.Properties.PopulateColumns();
+            lookUpEdit1.Properties.Columns[1].Visible = false;
 
+        }
     }
 }

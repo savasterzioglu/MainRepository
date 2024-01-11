@@ -182,6 +182,7 @@
             // 
             // topadet
             // 
+            this.topadet.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.topadet.Location = new System.Drawing.Point(129, 202);
             this.topadet.Name = "topadet";
             this.topadet.Size = new System.Drawing.Size(59, 20);
@@ -189,6 +190,7 @@
             // 
             // topsure
             // 
+            this.topsure.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.topsure.Location = new System.Drawing.Point(129, 228);
             this.topsure.Name = "topsure";
             this.topsure.Size = new System.Drawing.Size(59, 20);
@@ -196,6 +198,7 @@
             // 
             // agirlik
             // 
+            this.agirlik.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.agirlik.Location = new System.Drawing.Point(129, 254);
             this.agirlik.Name = "agirlik";
             this.agirlik.Size = new System.Drawing.Size(59, 20);
@@ -203,6 +206,7 @@
             // 
             // hmkod
             // 
+            this.hmkod.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.hmkod.Location = new System.Drawing.Point(129, 280);
             this.hmkod.Name = "hmkod";
             this.hmkod.Size = new System.Drawing.Size(59, 20);
@@ -210,6 +214,7 @@
             // 
             // ucret
             // 
+            this.ucret.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ucret.Location = new System.Drawing.Point(129, 306);
             this.ucret.Name = "ucret";
             this.ucret.Size = new System.Drawing.Size(59, 20);
@@ -217,6 +222,7 @@
             // 
             // kalinlik
             // 
+            this.kalinlik.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.kalinlik.Location = new System.Drawing.Point(266, 202);
             this.kalinlik.Name = "kalinlik";
             this.kalinlik.Size = new System.Drawing.Size(59, 20);
@@ -224,6 +230,7 @@
             // 
             // uzunluk
             // 
+            this.uzunluk.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.uzunluk.Location = new System.Drawing.Point(266, 228);
             this.uzunluk.Name = "uzunluk";
             this.uzunluk.Size = new System.Drawing.Size(59, 20);
@@ -231,6 +238,7 @@
             // 
             // hazirlik
             // 
+            this.hazirlik.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.hazirlik.Location = new System.Drawing.Point(266, 254);
             this.hazirlik.Name = "hazirlik";
             this.hazirlik.Size = new System.Drawing.Size(59, 20);
@@ -238,6 +246,7 @@
             // 
             // capakalma
             // 
+            this.capakalma.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.capakalma.Location = new System.Drawing.Point(266, 280);
             this.capakalma.Name = "capakalma";
             this.capakalma.Size = new System.Drawing.Size(59, 20);
@@ -245,6 +254,7 @@
             // 
             // mastar
             // 
+            this.mastar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.mastar.Location = new System.Drawing.Point(266, 306);
             this.mastar.Name = "mastar";
             this.mastar.Size = new System.Drawing.Size(59, 20);
@@ -252,6 +262,7 @@
             // 
             // labelControl4
             // 
+            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl4.Location = new System.Drawing.Point(17, 205);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(88, 13);
@@ -260,6 +271,7 @@
             // 
             // labelControl5
             // 
+            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl5.Location = new System.Drawing.Point(17, 231);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(59, 13);
@@ -268,6 +280,7 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl6.Location = new System.Drawing.Point(17, 257);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(28, 13);
@@ -276,6 +289,7 @@
             // 
             // labelControl7
             // 
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl7.Location = new System.Drawing.Point(17, 283);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(77, 13);
@@ -284,6 +298,7 @@
             // 
             // labelControl8
             // 
+            this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl8.Location = new System.Drawing.Point(17, 309);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(26, 13);
@@ -292,6 +307,7 @@
             // 
             // labelControl9
             // 
+            this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl9.Location = new System.Drawing.Point(196, 205);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(31, 13);
@@ -300,6 +316,7 @@
             // 
             // labelControl10
             // 
+            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl10.Location = new System.Drawing.Point(196, 231);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(37, 13);
@@ -308,6 +325,7 @@
             // 
             // labelControl11
             // 
+            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl11.Location = new System.Drawing.Point(196, 257);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(33, 13);
@@ -316,6 +334,7 @@
             // 
             // labelControl12
             // 
+            this.labelControl12.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl12.Location = new System.Drawing.Point(196, 283);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(56, 13);
@@ -324,6 +343,7 @@
             // 
             // labelControl13
             // 
+            this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelControl13.Location = new System.Drawing.Point(196, 309);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(33, 13);
@@ -405,6 +425,7 @@
             // 
             // simpleButton2
             // 
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton2.Location = new System.Drawing.Point(100, 280);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(23, 19);
@@ -451,6 +472,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Urun_Islem_Ekleme";
             this.Text = "Urun_Islem_Ekleme";
+            this.Load += new System.EventHandler(this.Urun_Islem_Ekleme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

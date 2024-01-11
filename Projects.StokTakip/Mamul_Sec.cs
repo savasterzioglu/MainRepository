@@ -36,7 +36,7 @@ namespace Projects.StokTakip
             //var _urun = new urun();
             _urun.id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id"));
             _urun.ukod = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ukod"));
-            _urun.parcaadi = gridView1.GetFocusedRowCellValue("uresimno").ToString();
+            _urun.parcaadi = gridView1.GetFocusedRowCellValue("parcaadi").ToString();
 
             var _urunislem = new Urun_islem();
             _urunislem.id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("id"));

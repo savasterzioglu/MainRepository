@@ -224,7 +224,7 @@
             this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.textEdit1);
             this.Name = "Urun_Girisi";
-            this.Text = "Form1";
+            this.Text = "Ürün Ve Mamül Girişi";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Urun_Girisi_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
