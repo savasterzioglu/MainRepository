@@ -8,12 +8,31 @@ namespace Projects.DbConnection.Business.MSSQL
     {
         public int id { get; set; }
         public int ukod { get; set; }
+        public int mkod { get; set; }
         public string toplamsure { get; set; }
         public string sure { get; set; }
         public int toplamadet { get; set; }
         public int agirlik { get; set; }
         public int uzunluk { get; set; }
         public decimal ucret { get; set; }
+        public string islem { get; set; }
+        public string kaynaktipi { get; set; }
+        public int kaynakuzunluk { get; set; }
+        public float kayipkatsayi { get; set; }
+        public float capakkatsayi { get; set; }
+    }
+
+    public class kaynak_sabitleri
+    {
+        public int id { get; set; }
+        public string kaynaktipi { get; set; }
+        public float kaynakkalinlik { get; set; }
+        public int kaynakparametresi { get; set; }
+        public int dktelmiktari { get; set; }
+        public float hacim { get; set; }
+        public float metrekaynakagirlik { get; set; }
+        public float kaynaktelcapi { get; set; }
+        public float harcanacakteluzunluk { get; set; }
     }
 
     public class dik_islem

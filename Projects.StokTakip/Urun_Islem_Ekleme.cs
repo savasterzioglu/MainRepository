@@ -26,7 +26,7 @@ namespace Projects.StokTakip
 
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            gridControl1.DataSource = db.GetIslemler().Where(a=> a.ukod == Convert.ToInt32(textEdit1.Text));
+            gridControl1.DataSource = db.GetIslemler().Where(x=> x.ukod == Convert.ToInt32(textEdit1.Text));
             int a=0;
             if (lookUpEdit1.EditValue.ToString() != "")
             {
@@ -92,6 +92,7 @@ namespace Projects.StokTakip
 
         public void formac(mamul _urun)
         {
+            gridControl1.DataSource = db.GetIslemler();
                 textEdit1.Text = _urun.ukod.ToString();
                 textEdit2.Text = _urun.parcaadi;
               ////  gridControl1.DataSource = db.geturu
@@ -199,6 +200,21 @@ namespace Projects.StokTakip
                     break;
             }
 
+            if (a>0)
+            {
+                var _islemler = new islemler();
+                _islemler.ukod = Convert.ToInt32(textEdit1.Text);
+                _islemler.toplamadet = Convert.ToInt32(topadet.Text);
+                _islemler.toplamsure = topsure.Text;
+                _islemler.sure = topsure.Text;
+                _islemler.uzunluk = Convert.ToInt32(uzunluk.Text);
+                _islemler.agirlik = Convert.ToInt32(agirlik.Text);
+                _islemler.ucret = Convert.ToDecimal(ucret.Text);
+
+                var result_islemler = db.insert_Islemler(_islemler);
+            }
+
+
             var _urunislem = new Urun_islem();
             _urunislem.ukod = Convert.ToInt32(textEdit1.Text);
             _urunislem.uresimno = "";
@@ -238,6 +254,12 @@ namespace Projects.StokTakip
             lookUpEdit1.Properties.PopulateColumns();
             lookUpEdit1.Properties.Columns[1].Visible = false;
 
+        }
+
+        private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Kaynak_Sabitleri frm = new Kaynak_Sabitleri();
+            frm.ShowDialog(this);
         }
     }
 }

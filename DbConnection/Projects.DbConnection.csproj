@@ -55,6 +55,7 @@
     <Compile Include="Demirciler\BaseModel.cs" />
     <Compile Include="Demirciler\DBIsil_Islem.cs" />
     <Compile Include="Demirciler\DBPres_Islem.cs" />
+    <Compile Include="Demirciler\DBKaynak_Sabitleri.cs" />
     <Compile Include="Demirciler\DBTaslama_Islem.cs" />
     <Compile Include="Demirciler\DBMontaj_Islem.cs" />
     <Compile Include="Demirciler\DBKaplama_Islem.cs" />

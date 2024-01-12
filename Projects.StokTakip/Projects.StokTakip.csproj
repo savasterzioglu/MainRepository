@@ -66,6 +66,12 @@
     <Compile Include="ham madde.Designer.cs">
       <DependentUpon>ham madde.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kaynak_Sabitleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kaynak_Sabitleri.Designer.cs">
+      <DependentUpon>Kaynak_Sabitleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mamul_Sec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="ham madde.resx">
       <DependentUpon>ham madde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kaynak_Sabitleri.resx">
+      <DependentUpon>Kaynak_Sabitleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mamul_Sec.resx">
       <DependentUpon>Mamul_Sec.cs</DependentUpon>
