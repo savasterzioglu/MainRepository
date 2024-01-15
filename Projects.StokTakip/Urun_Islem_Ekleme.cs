@@ -95,7 +95,7 @@ namespace Projects.StokTakip
             gridControl1.DataSource = db.GetIslemler();
                 textEdit1.Text = _urun.ukod.ToString();
                 textEdit2.Text = _urun.parcaadi;
-              ////  gridControl1.DataSource = db.geturu
+             ////  gridControl1.DataSource = db.geturu
             //textad.EditValue = _Pers.P_ad;
             //textsoyad.Text = _Pers.P_soyad;
             //persid = _Pers.P_id;

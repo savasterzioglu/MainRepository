@@ -54,8 +54,9 @@
   <ItemGroup>
     <Compile Include="Demirciler\BaseModel.cs" />
     <Compile Include="Demirciler\DBIsil_Islem.cs" />
+    <Compile Include="Demirciler\DBKaynak_Sabitleri - Copy.cs" />
     <Compile Include="Demirciler\DBPres_Islem.cs" />
-    <Compile Include="Demirciler\DBKaynak_Sabitleri.cs" />
+    <Compile Include="Demirciler\DBKaynak_Maliyeti.cs" />
     <Compile Include="Demirciler\DBTaslama_Islem.cs" />
     <Compile Include="Demirciler\DBMontaj_Islem.cs" />
     <Compile Include="Demirciler\DBKaplama_Islem.cs" />
@@ -79,10 +80,10 @@
     <Compile Include="Demirciler\DBPuantaj.cs" />
     <Compile Include="Demirciler\DBPersonel.cs" />
     <Compile Include="Demirciler\MSSQL\Business\DATA.cs" />
-    <Compile Include="Demirciler\MSSQL\Business\DataBaseObjects.cs">
+    <Compile Include="Demirciler\MSSQL\Business\DataBaseObjects11.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataBaseObjects.tt</DependentUpon>
+      <DependentUpon>DataBaseObjects1.tt</DependentUpon>
     </Compile>
     <Compile Include="Demirciler\MSSQL\Business\DB.cs" />
     <Compile Include="Demirciler\MSSQL\Business\DBBusiness.cs" />
@@ -95,9 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Demirciler\MSSQL\Business\DataBaseObjects.tt">
+    <Content Include="Demirciler\MSSQL\Business\DataBaseObjects1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataBaseObjects.cs</LastGenOutput>
+      <LastGenOutput>DataBaseObjects11.cs</LastGenOutput>
     </Content>
     <Content Include="Demirciler\MSSQL\Business\SQLClassGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

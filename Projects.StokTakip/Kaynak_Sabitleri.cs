@@ -73,18 +73,7 @@ namespace Projects.StokTakip
           kaynakagirlik.EditValue=  agirlik_hesap(hacim.Text);
         }
 
-        private void Kaynak_Sabitleri_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void kaynakagirlik_EditValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-        }
 
         private void kaynaktelcap_EditValueChanged(object sender, EventArgs e)
         {

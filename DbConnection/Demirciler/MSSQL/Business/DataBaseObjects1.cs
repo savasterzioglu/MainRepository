@@ -498,4 +498,31 @@ namespace Projects.DbConnection.Business.MSSQL
         public int ukod { get; set;}
     }
 
+    public class kaynak_maliyet
+    {
+        public int id { get; set; }
+        public string ust_kurulus_adi { get; set; }
+        public string firma_adi { get; set; }
+        public int pkod { get; set; }
+        public string padi { get; set; }
+        public string kaynak_tipi { get; set; }
+        public float kaynak_uzunluk { get; set; }
+        public float kayip_zaman_kat_sayi { get; set; }
+        public float capak_alma_kat_sayi { get; set; }
+        public float uretim_suresi { get; set; }
+        public float gunde_uretilecek_adet { get; set; }
+        public float kaynak_tel_maliyet { get; set; }
+        public float karisim_gaz_maliyet { get; set; }
+        public float iscilik_maliyeti { get; set; }
+        public float sabit_maliyeti { get; set; }
+        public float diger_sarf_maliyet { get; set; }
+        public float matrah { get; set; }
+        public float kar_orani { get; set; }
+        public float kar { get; set; }
+        public float basabas_noktasi { get; set; }
+        public float fiyat { get; set; }
+        public float parca_maliyeti { get; set; }
+        public float toplam_maliyet { get; set; }
+    }
+
 }

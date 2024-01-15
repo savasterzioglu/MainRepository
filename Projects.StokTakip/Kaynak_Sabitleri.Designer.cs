@@ -58,7 +58,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.kaynaktipi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalinlik.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaynakparametresi.Properties)).BeginInit();
@@ -198,7 +197,6 @@
             this.kaynakagirlik.Properties.MaskSettings.Set("mask", "f");
             this.kaynakagirlik.Size = new System.Drawing.Size(64, 20);
             this.kaynakagirlik.TabIndex = 18;
-            this.kaynakagirlik.EditValueChanged += new System.EventHandler(this.kaynakagirlik_EditValueChanged);
             // 
             // kaynaktelcap
             // 
@@ -331,21 +329,11 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 316);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(293, 26);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 29;
-            this.simpleButton1.Text = "simpleButton1";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // Kaynak_Sabitleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 336);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl6);
@@ -369,7 +357,6 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Kaynak_Sabitleri";
             this.Text = "Kaynak Sabitleri";
-            this.Load += new System.EventHandler(this.Kaynak_Sabitleri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kaynaktipi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalinlik.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaynakparametresi.Properties)).EndInit();
@@ -416,6 +403,5 @@
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
