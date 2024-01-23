@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this._ust_kurulus_adi = new DevExpress.XtraEditors.TextEdit();
             this._firma_adi = new DevExpress.XtraEditors.TextEdit();
             this._pkod = new DevExpress.XtraEditors.TextEdit();
@@ -87,6 +87,8 @@
             this._matrah = new DevExpress.XtraEditors.TextEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
+            this._sacinti = new DevExpress.XtraEditors.TextEdit();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
@@ -106,8 +108,25 @@
             this._kaynak_gaz_lt_fiyat = new DevExpress.XtraEditors.TextEdit();
             this._kaynak_tel_kg_fiyat = new DevExpress.XtraEditors.TextEdit();
             this._kaynak_tipi = new DevExpress.XtraEditors.LookUpEdit();
-            this._sacinti = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this._kullanilacak_gaz_lt = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
+            this._fiil_kaynak_sure = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
+            this._teorik_kaynak_suresi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl37 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
+            this._dk_kullanilacak_gaz_lt = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
+            this._surulecek_tel_uzunluk = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this._kaynak_agirlik_kg = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this._sicranti_dahil_harcanacak_tel = new DevExpress.XtraEditors.TextEdit();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._ust_kurulus_adi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._firma_adi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._pkod.Properties)).BeginInit();
@@ -135,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._matrah.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._sacinti.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._dk_gaz_miktar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._dk_tel_miktar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._kaynak_agirlik.Properties)).BeginInit();
@@ -145,7 +165,20 @@
             ((System.ComponentModel.ISupportInitialize)(this._kaynak_gaz_lt_fiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._kaynak_tel_kg_fiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._kaynak_tipi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._sacinti.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._kullanilacak_gaz_lt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._fiil_kaynak_sure.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._teorik_kaynak_suresi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._dk_kullanilacak_gaz_lt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._surulecek_tel_uzunluk.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._kaynak_agirlik_kg.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._sicranti_dahil_harcanacak_tel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // _ust_kurulus_adi
@@ -179,27 +212,39 @@
             // 
             // _kaynak_uzunluk
             // 
+            this._kaynak_uzunluk.EditValue = 0D;
             this._kaynak_uzunluk.Location = new System.Drawing.Point(107, 156);
             this._kaynak_uzunluk.Name = "_kaynak_uzunluk";
+            this._kaynak_uzunluk.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._kaynak_uzunluk.Properties.MaskSettings.Set("mask", "f");
+            this._kaynak_uzunluk.Properties.UseMaskAsDisplayFormat = false;
             this._kaynak_uzunluk.Size = new System.Drawing.Size(100, 20);
             this._kaynak_uzunluk.TabIndex = 5;
+            this._kaynak_uzunluk.EditValueChanged += new System.EventHandler(this._kaynak_uzunluk_EditValueChanged);
             // 
             // _kayip_zaman_ks
             // 
+            this._kayip_zaman_ks.EditValue = 0D;
             this._kayip_zaman_ks.Location = new System.Drawing.Point(107, 182);
             this._kayip_zaman_ks.Name = "_kayip_zaman_ks";
+            this._kayip_zaman_ks.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._kayip_zaman_ks.Properties.MaskSettings.Set("mask", "f");
             this._kayip_zaman_ks.Size = new System.Drawing.Size(100, 20);
             this._kayip_zaman_ks.TabIndex = 6;
             // 
             // _capak_mastar_ks
             // 
+            this._capak_mastar_ks.EditValue = 0D;
             this._capak_mastar_ks.Location = new System.Drawing.Point(107, 217);
             this._capak_mastar_ks.Name = "_capak_mastar_ks";
+            this._capak_mastar_ks.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._capak_mastar_ks.Properties.MaskSettings.Set("mask", "f");
             this._capak_mastar_ks.Size = new System.Drawing.Size(100, 20);
             this._capak_mastar_ks.TabIndex = 7;
             // 
             // _p_uretim_sure
             // 
+            this._p_uretim_sure.Enabled = false;
             this._p_uretim_sure.Location = new System.Drawing.Point(107, 243);
             this._p_uretim_sure.Name = "_p_uretim_sure";
             this._p_uretim_sure.Size = new System.Drawing.Size(100, 20);
@@ -304,6 +349,7 @@
             // 
             // _kaynak_tel_maliyet
             // 
+            this._kaynak_tel_maliyet.Enabled = false;
             this._kaynak_tel_maliyet.Location = new System.Drawing.Point(372, 12);
             this._kaynak_tel_maliyet.Name = "_kaynak_tel_maliyet";
             this._kaynak_tel_maliyet.Size = new System.Drawing.Size(100, 20);
@@ -473,20 +519,20 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 339);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(658, 88);
+            this.gridControl1.Size = new System.Drawing.Size(673, 88);
             this.gridControl1.TabIndex = 44;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            gridFormatRule2.ApplyToRow = true;
-            gridFormatRule2.Name = "Format0";
-            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue2.PredefinedName = "Green Fill";
-            formatConditionRuleValue2.Value1 = "h.sonu";
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            this.gridView1.FormatRules.Add(gridFormatRule2);
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue1.PredefinedName = "Green Fill";
+            formatConditionRuleValue1.Value1 = "h.sonu";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -543,7 +589,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(658, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(673, 20);
             // 
             // barDockControlBottom
             // 
@@ -551,7 +597,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 427);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(658, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(673, 0);
             // 
             // barDockControlLeft
             // 
@@ -565,7 +611,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(658, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(673, 20);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 407);
             // 
@@ -608,11 +654,29 @@
             this.groupControl1.Controls.Add(this._kaynak_gaz_lt_fiyat);
             this.groupControl1.Controls.Add(this._kaynak_tel_kg_fiyat);
             this.groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card;
-            this.groupControl1.Location = new System.Drawing.Point(478, 18);
+            this.groupControl1.Location = new System.Drawing.Point(3, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(178, 303);
+            this.groupControl1.Size = new System.Drawing.Size(176, 267);
             this.groupControl1.TabIndex = 51;
             this.groupControl1.Text = "Sabit Maliyetler";
+            // 
+            // labelControl32
+            // 
+            this.labelControl32.Location = new System.Drawing.Point(5, 195);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(35, 13);
+            this.labelControl32.TabIndex = 49;
+            this.labelControl32.Text = "Sıçrantı";
+            // 
+            // _sacinti
+            // 
+            this._sacinti.Enabled = false;
+            this._sacinti.Location = new System.Drawing.Point(122, 192);
+            this._sacinti.Name = "_sacinti";
+            this._sacinti.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._sacinti.Properties.MaskSettings.Set("mask", "f");
+            this._sacinti.Size = new System.Drawing.Size(51, 20);
+            this._sacinti.TabIndex = 48;
             // 
             // labelControl31
             // 
@@ -624,7 +688,7 @@
             // 
             // labelControl30
             // 
-            this.labelControl30.Location = new System.Drawing.Point(5, 253);
+            this.labelControl30.Location = new System.Drawing.Point(5, 247);
             this.labelControl30.Name = "labelControl30";
             this.labelControl30.Size = new System.Drawing.Size(84, 13);
             this.labelControl30.TabIndex = 46;
@@ -632,15 +696,15 @@
             // 
             // labelControl29
             // 
-            this.labelControl29.Location = new System.Drawing.Point(5, 227);
+            this.labelControl29.Location = new System.Drawing.Point(5, 221);
             this.labelControl29.Name = "labelControl29";
-            this.labelControl29.Size = new System.Drawing.Size(69, 13);
+            this.labelControl29.Size = new System.Drawing.Size(94, 13);
             this.labelControl29.TabIndex = 45;
-            this.labelControl29.Text = "Kaynak Ağırlığı";
+            this.labelControl29.Text = "Kaynak Ağırlığı (1M)";
             // 
             // labelControl28
             // 
-            this.labelControl28.Location = new System.Drawing.Point(5, 175);
+            this.labelControl28.Location = new System.Drawing.Point(5, 169);
             this.labelControl28.Name = "labelControl28";
             this.labelControl28.Size = new System.Drawing.Size(76, 13);
             this.labelControl28.TabIndex = 44;
@@ -648,7 +712,7 @@
             // 
             // labelControl27
             // 
-            this.labelControl27.Location = new System.Drawing.Point(5, 149);
+            this.labelControl27.Location = new System.Drawing.Point(5, 143);
             this.labelControl27.Name = "labelControl27";
             this.labelControl27.Size = new System.Drawing.Size(95, 13);
             this.labelControl27.TabIndex = 43;
@@ -667,7 +731,7 @@
             // _dk_tel_miktar
             // 
             this._dk_tel_miktar.Enabled = false;
-            this._dk_tel_miktar.Location = new System.Drawing.Point(122, 250);
+            this._dk_tel_miktar.Location = new System.Drawing.Point(122, 244);
             this._dk_tel_miktar.Name = "_dk_tel_miktar";
             this._dk_tel_miktar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this._dk_tel_miktar.Properties.MaskSettings.Set("mask", "f");
@@ -677,7 +741,7 @@
             // _kaynak_agirlik
             // 
             this._kaynak_agirlik.Enabled = false;
-            this._kaynak_agirlik.Location = new System.Drawing.Point(122, 224);
+            this._kaynak_agirlik.Location = new System.Drawing.Point(122, 218);
             this._kaynak_agirlik.Name = "_kaynak_agirlik";
             this._kaynak_agirlik.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this._kaynak_agirlik.Properties.MaskSettings.Set("mask", "f");
@@ -687,7 +751,7 @@
             // _kaynak_tel_cap
             // 
             this._kaynak_tel_cap.Enabled = false;
-            this._kaynak_tel_cap.Location = new System.Drawing.Point(122, 172);
+            this._kaynak_tel_cap.Location = new System.Drawing.Point(122, 166);
             this._kaynak_tel_cap.Name = "_kaynak_tel_cap";
             this._kaynak_tel_cap.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this._kaynak_tel_cap.Properties.MaskSettings.Set("mask", "f");
@@ -697,7 +761,7 @@
             // _kaynak_param
             // 
             this._kaynak_param.Enabled = false;
-            this._kaynak_param.Location = new System.Drawing.Point(122, 146);
+            this._kaynak_param.Location = new System.Drawing.Point(122, 140);
             this._kaynak_param.Name = "_kaynak_param";
             this._kaynak_param.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this._kaynak_param.Properties.MaskSettings.Set("mask", "f");
@@ -791,31 +855,186 @@
             this._kaynak_tipi.QueryPopUp += new System.ComponentModel.CancelEventHandler(this._kaynak_tipi_QueryPopUp);
             this._kaynak_tipi.EditValueChanged += new System.EventHandler(this._kaynak_tipi_EditValueChanged);
             // 
-            // _sacinti
+            // xtraTabControl1
             // 
-            this._sacinti.Enabled = false;
-            this._sacinti.Location = new System.Drawing.Point(122, 198);
-            this._sacinti.Name = "_sacinti";
-            this._sacinti.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this._sacinti.Properties.MaskSettings.Set("mask", "f");
-            this._sacinti.Size = new System.Drawing.Size(51, 20);
-            this._sacinti.TabIndex = 48;
+            this.xtraTabControl1.Location = new System.Drawing.Point(478, 21);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(185, 300);
+            this.xtraTabControl1.TabIndex = 58;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
             // 
-            // labelControl32
+            // xtraTabPage1
             // 
-            this.labelControl32.Location = new System.Drawing.Point(5, 201);
-            this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(31, 13);
-            this.labelControl32.TabIndex = 49;
-            this.labelControl32.Text = "Saçıntı";
+            this.xtraTabPage1.Controls.Add(this.groupControl1);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(183, 275);
+            this.xtraTabPage1.Text = "Sayfa 1";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.groupControl2);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(183, 275);
+            this.xtraTabPage2.Text = "Sayfa 2";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this._kullanilacak_gaz_lt);
+            this.groupControl2.Controls.Add(this.labelControl39);
+            this.groupControl2.Controls.Add(this._fiil_kaynak_sure);
+            this.groupControl2.Controls.Add(this.labelControl38);
+            this.groupControl2.Controls.Add(this._teorik_kaynak_suresi);
+            this.groupControl2.Controls.Add(this.labelControl37);
+            this.groupControl2.Controls.Add(this.labelControl36);
+            this.groupControl2.Controls.Add(this._dk_kullanilacak_gaz_lt);
+            this.groupControl2.Controls.Add(this.labelControl35);
+            this.groupControl2.Controls.Add(this._surulecek_tel_uzunluk);
+            this.groupControl2.Controls.Add(this.labelControl34);
+            this.groupControl2.Controls.Add(this._kaynak_agirlik_kg);
+            this.groupControl2.Controls.Add(this.labelControl33);
+            this.groupControl2.Controls.Add(this._sicranti_dahil_harcanacak_tel);
+            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(177, 269);
+            this.groupControl2.TabIndex = 0;
+            this.groupControl2.Text = "groupControl2";
+            // 
+            // _kullanilacak_gaz_lt
+            // 
+            this._kullanilacak_gaz_lt.Enabled = false;
+            this._kullanilacak_gaz_lt.Location = new System.Drawing.Point(121, 212);
+            this._kullanilacak_gaz_lt.Name = "_kullanilacak_gaz_lt";
+            this._kullanilacak_gaz_lt.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._kullanilacak_gaz_lt.Properties.MaskSettings.Set("mask", "f");
+            this._kullanilacak_gaz_lt.Size = new System.Drawing.Size(51, 20);
+            this._kullanilacak_gaz_lt.TabIndex = 71;
+            // 
+            // labelControl39
+            // 
+            this.labelControl39.Location = new System.Drawing.Point(4, 215);
+            this.labelControl39.Name = "labelControl39";
+            this.labelControl39.Size = new System.Drawing.Size(95, 13);
+            this.labelControl39.TabIndex = 71;
+            this.labelControl39.Text = "Kullanılacak Gaz (Lt)";
+            // 
+            // _fiil_kaynak_sure
+            // 
+            this._fiil_kaynak_sure.Enabled = false;
+            this._fiil_kaynak_sure.Location = new System.Drawing.Point(121, 186);
+            this._fiil_kaynak_sure.Name = "_fiil_kaynak_sure";
+            this._fiil_kaynak_sure.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._fiil_kaynak_sure.Properties.MaskSettings.Set("mask", "f");
+            this._fiil_kaynak_sure.Size = new System.Drawing.Size(51, 20);
+            this._fiil_kaynak_sure.TabIndex = 70;
+            // 
+            // labelControl38
+            // 
+            this.labelControl38.Location = new System.Drawing.Point(5, 189);
+            this.labelControl38.Name = "labelControl38";
+            this.labelControl38.Size = new System.Drawing.Size(84, 13);
+            this.labelControl38.TabIndex = 69;
+            this.labelControl38.Text = "Fiili Kaynak Süresi";
+            // 
+            // _teorik_kaynak_suresi
+            // 
+            this._teorik_kaynak_suresi.Enabled = false;
+            this._teorik_kaynak_suresi.Location = new System.Drawing.Point(121, 160);
+            this._teorik_kaynak_suresi.Name = "_teorik_kaynak_suresi";
+            this._teorik_kaynak_suresi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._teorik_kaynak_suresi.Properties.MaskSettings.Set("mask", "f");
+            this._teorik_kaynak_suresi.Size = new System.Drawing.Size(51, 20);
+            this._teorik_kaynak_suresi.TabIndex = 68;
+            // 
+            // labelControl37
+            // 
+            this.labelControl37.Location = new System.Drawing.Point(4, 163);
+            this.labelControl37.Name = "labelControl37";
+            this.labelControl37.Size = new System.Drawing.Size(99, 13);
+            this.labelControl37.TabIndex = 67;
+            this.labelControl37.Text = "Teorik Kaynak Süresi";
+            // 
+            // labelControl36
+            // 
+            this.labelControl36.Location = new System.Drawing.Point(4, 125);
+            this.labelControl36.Name = "labelControl36";
+            this.labelControl36.Size = new System.Drawing.Size(62, 26);
+            this.labelControl36.TabIndex = 66;
+            this.labelControl36.Text = "Kullanılacak \r\nGaz Lt (1 Dk)";
+            // 
+            // _dk_kullanilacak_gaz_lt
+            // 
+            this._dk_kullanilacak_gaz_lt.Enabled = false;
+            this._dk_kullanilacak_gaz_lt.Location = new System.Drawing.Point(121, 134);
+            this._dk_kullanilacak_gaz_lt.Name = "_dk_kullanilacak_gaz_lt";
+            this._dk_kullanilacak_gaz_lt.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._dk_kullanilacak_gaz_lt.Properties.MaskSettings.Set("mask", "f");
+            this._dk_kullanilacak_gaz_lt.Size = new System.Drawing.Size(51, 20);
+            this._dk_kullanilacak_gaz_lt.TabIndex = 65;
+            // 
+            // labelControl35
+            // 
+            this.labelControl35.Location = new System.Drawing.Point(5, 93);
+            this.labelControl35.Name = "labelControl35";
+            this.labelControl35.Size = new System.Drawing.Size(63, 26);
+            this.labelControl35.TabIndex = 64;
+            this.labelControl35.Text = "Sürülecek Tel \r\nUzunluk (M)";
+            // 
+            // _surulecek_tel_uzunluk
+            // 
+            this._surulecek_tel_uzunluk.Enabled = false;
+            this._surulecek_tel_uzunluk.Location = new System.Drawing.Point(121, 99);
+            this._surulecek_tel_uzunluk.Name = "_surulecek_tel_uzunluk";
+            this._surulecek_tel_uzunluk.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._surulecek_tel_uzunluk.Properties.MaskSettings.Set("mask", "f");
+            this._surulecek_tel_uzunluk.Size = new System.Drawing.Size(51, 20);
+            this._surulecek_tel_uzunluk.TabIndex = 63;
+            // 
+            // labelControl34
+            // 
+            this.labelControl34.Location = new System.Drawing.Point(4, 67);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(92, 13);
+            this.labelControl34.TabIndex = 62;
+            this.labelControl34.Text = "Kaynak Ağırlığı (Kg)";
+            // 
+            // _kaynak_agirlik_kg
+            // 
+            this._kaynak_agirlik_kg.Enabled = false;
+            this._kaynak_agirlik_kg.Location = new System.Drawing.Point(121, 64);
+            this._kaynak_agirlik_kg.Name = "_kaynak_agirlik_kg";
+            this._kaynak_agirlik_kg.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._kaynak_agirlik_kg.Properties.MaskSettings.Set("mask", "f");
+            this._kaynak_agirlik_kg.Size = new System.Drawing.Size(51, 20);
+            this._kaynak_agirlik_kg.TabIndex = 61;
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Location = new System.Drawing.Point(4, 33);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(73, 26);
+            this.labelControl33.TabIndex = 60;
+            this.labelControl33.Text = "Sıçrantı Dahil \r\nHarcanacak Tel";
+            // 
+            // _sicranti_dahil_harcanacak_tel
+            // 
+            this._sicranti_dahil_harcanacak_tel.Enabled = false;
+            this._sicranti_dahil_harcanacak_tel.Location = new System.Drawing.Point(121, 38);
+            this._sicranti_dahil_harcanacak_tel.Name = "_sicranti_dahil_harcanacak_tel";
+            this._sicranti_dahil_harcanacak_tel.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this._sicranti_dahil_harcanacak_tel.Properties.MaskSettings.Set("mask", "f");
+            this._sicranti_dahil_harcanacak_tel.Size = new System.Drawing.Size(51, 20);
+            this._sicranti_dahil_harcanacak_tel.TabIndex = 59;
             // 
             // Kaynak_Maliyeti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 427);
+            this.ClientSize = new System.Drawing.Size(673, 427);
+            this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this._kaynak_tipi);
-            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControl22);
             this.Controls.Add(this._matrah);
             this.Controls.Add(this.gridControl1);
@@ -896,6 +1115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._sacinti.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._dk_gaz_miktar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._dk_tel_miktar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._kaynak_agirlik.Properties)).EndInit();
@@ -906,7 +1126,21 @@
             ((System.ComponentModel.ISupportInitialize)(this._kaynak_gaz_lt_fiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._kaynak_tel_kg_fiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._kaynak_tipi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._sacinti.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._kullanilacak_gaz_lt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._fiil_kaynak_sure.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._teorik_kaynak_suresi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._dk_kullanilacak_gaz_lt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._surulecek_tel_uzunluk.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._kaynak_agirlik_kg.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._sicranti_dahil_harcanacak_tel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -991,5 +1225,24 @@
         private DevExpress.XtraEditors.LookUpEdit _kaynak_tipi;
         private DevExpress.XtraEditors.TextEdit _sacinti;
         private DevExpress.XtraEditors.LabelControl labelControl32;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl33;
+        private DevExpress.XtraEditors.TextEdit _sicranti_dahil_harcanacak_tel;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
+        private DevExpress.XtraEditors.TextEdit _kaynak_agirlik_kg;
+        private DevExpress.XtraEditors.LabelControl labelControl35;
+        private DevExpress.XtraEditors.TextEdit _surulecek_tel_uzunluk;
+        private DevExpress.XtraEditors.LabelControl labelControl36;
+        private DevExpress.XtraEditors.TextEdit _dk_kullanilacak_gaz_lt;
+        private DevExpress.XtraEditors.TextEdit _teorik_kaynak_suresi;
+        private DevExpress.XtraEditors.LabelControl labelControl37;
+        private DevExpress.XtraEditors.TextEdit _fiil_kaynak_sure;
+        private DevExpress.XtraEditors.LabelControl labelControl38;
+        private DevExpress.XtraEditors.TextEdit _kullanilacak_gaz_lt;
+        private DevExpress.XtraEditors.LabelControl labelControl39;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

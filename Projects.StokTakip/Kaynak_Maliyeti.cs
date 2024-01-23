@@ -85,6 +85,11 @@ namespace Projects.StokTakip
             return (float)Convert.ToDecimal(deger);
         }
 
+        double Cd (string deger)
+        {
+            return (double)Convert.ToDecimal(deger);
+        }
+
         void SabitDegerler()
         {
             _kaynak_tel_kg_fiyat.Text =  db.GetSabit_Parametreler().Where(a=> a.id == 19).Select(x=> x.Parametre_fiyat).First().ToString();
@@ -122,10 +127,42 @@ namespace Projects.StokTakip
             _dk_tel_miktar.Text = _Liste1.dktelmiktari.ToString();
             //_dk_gaz_miktar.Text = _Liste.
             _sacinti.Text = db.GetSabit_Parametreler().Where(y => y.id == 20).Select(x => x.Parametre_fiyat).First().ToString();
-            
+            _kaynak_agirlik_kg.Text = ((Cf(_kaynak_uzunluk.Text) / 1000) * Cf(_kaynak_agirlik.Text)).ToString();
+            _sicranti_dahil_harcanacak_tel.Text = ((Cf(_sacinti.Text) / 100) * Cf(_kaynak_agirlik_kg.Text)+Cf(_kaynak_agirlik_kg.Text)).ToString();
+            _surulecek_tel_uzunluk.Text =
+                ((Cf(_sicranti_dahil_harcanacak_tel.Text) * 1000000) /                
+                (7.86 * 3.14 * Math.Pow(Cf(_kaynak_tel_cap.Text) / 2, 2)) / 1000).ToString();
+            _dk_kullanilacak_gaz_lt.Text = (Cf(_kaynak_tel_cap.Text) * 11.5).ToString();
+
+            _teorik_kaynak_suresi.Text = (Cf(_surulecek_tel_uzunluk.Text)/Cf(_dk_tel_miktar.Text)).ToString();
+            _fiil_kaynak_sure.Text = (Cf(_kaynak_param.Text)*Cf(_teorik_kaynak_suresi.Text)).ToString();
+            _kullanilacak_gaz_lt.Text = (Cf(_dk_kullanilacak_gaz_lt.Text) * Cf(_fiil_kaynak_sure.Text)).ToString();
+            _p_uretim_sure.Text = (Cf(_fiil_kaynak_sure.Text) * (1+ Cf(_kayip_zaman_ks.Text) + Cf(_capak_mastar_ks.Text))).ToString();
+    //        _gunde_uretilecek_adet.Text = (480 / Cf(_p_uretim_sure.Text)).ToString();
+
+    //        _kaynak_tel_maliyet.Text = (Cf(_sicranti_dahil_harcanacak_tel.Text)*Cf(_kaynak_tel_kg_fiyat.Text)).ToString();
+    //        _karisim_gaz_maliyet.Text = (Cf(_kullanilacak_gaz_lt.Text)*Cf(_kaynak_gaz_lt_fiyat.Text)).ToString();
+    //        _iscilik_maliyet.Text = (Cf(_p_uretim_sure.Text)*Cf(_iscilik_dk_fiyat.Text)).ToString();
+    //        _sabit_maliyet.Text = (Cf(_p_uretim_sure.Text)*Cf(_sabit_maliyet_dk_fiyat.Text)).ToString();
+    //        _diger_sarf_maliyet.Text = (Cf(_iscilik_maliyet.Text)*0.12).ToString();
+
+      //      _matrah.Text = (Cf(_kaynak_tel_maliyet.Text)+Cf(_karisim_gaz_maliyet.Text)+Cf(_iscilik_maliyet.Text)+Cf(_sabit_maliyet.Text)+Cf(_diger_sarf_maliyet.Text)).ToString();
+      //      _kar.Text = (Cf(_iscilik_maliyet.Text)*Cf(_kar_orani.Text)).ToString();
+      //      _basabas_noktasi.Text = _matrah.Text + 0/*Toplam var ama Gelecek Değer Boş adlı sütun*/;
+      //      _fiyat.Text = (Cf(_matrah.Text)+0/**/+Cf(_kar.Text)).ToString();
+
+            // Gerekli olmayan veriler.
+            //_parca_maliyet.Text = "";
+            //_toplam_maliyet.Text = (Cf(_fiyat.Text)+Cf(_parca_maliyet.Text)).ToString();
+
+        }
+        
+        private void _kaynak_tipi_EditValueChanged(object sender, EventArgs e)
+        {
+            kaynak_tip_change();
         }
 
-        private void _kaynak_tipi_EditValueChanged(object sender, EventArgs e)
+        private void _kaynak_uzunluk_EditValueChanged(object sender, EventArgs e)
         {
             kaynak_tip_change();
         }
