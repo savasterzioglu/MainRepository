@@ -18,7 +18,7 @@ namespace Projects.StokTakip
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Kaynak_Maliyeti());
+            Application.Run(new Kaynak_Sabitleri());
         }
     }
 }

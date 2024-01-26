@@ -26,13 +26,13 @@ namespace Projects.DbConnection.Business.MSSQL
     {
         public int id { get; set; }
         public string kaynaktipi { get; set; }
-        public float kaynakkalinlik { get; set; }
+        public double kaynakkalinlik { get; set; }
         public int kaynakparametresi { get; set; }
         public int dktelmiktari { get; set; }
-        public float hacim { get; set; }
-        public float metrekaynakagirlik { get; set; }
-        public float kaynaktelcapi { get; set; }
-        public float harcanacakteluzunluk { get; set; }
+        public double hacim { get; set; }
+        public double metrekaynakagirlik { get; set; }
+        public double kaynaktelcapi { get; set; }
+        public double harcanacakteluzunluk { get; set; }
     }
 
     public class dik_islem

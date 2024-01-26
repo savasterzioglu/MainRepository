@@ -85,6 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBaseObjects1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Demirciler\MSSQL\Business\Funcs.cs" />
     <Compile Include="Demirciler\MSSQL\Business\DB.cs" />
     <Compile Include="Demirciler\MSSQL\Business\DBBusiness.cs" />
     <Compile Include="Demirciler\MSSQL\Business\ExpressionHelper.cs" />

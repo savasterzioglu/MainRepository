@@ -138,7 +138,7 @@ namespace Projects.StokTakip
             _fiil_kaynak_sure.Text = (Cf(_kaynak_param.Text)*Cf(_teorik_kaynak_suresi.Text)).ToString();
             _kullanilacak_gaz_lt.Text = (Cf(_dk_kullanilacak_gaz_lt.Text) * Cf(_fiil_kaynak_sure.Text)).ToString();
             _p_uretim_sure.Text = (Cf(_fiil_kaynak_sure.Text) * (1+ Cf(_kayip_zaman_ks.Text) + Cf(_capak_mastar_ks.Text))).ToString();
-    //        _gunde_uretilecek_adet.Text = (480 / Cf(_p_uretim_sure.Text)).ToString();
+            _gunde_uretilecek_adet.Text = (480 / Cf(_p_uretim_sure.Text)).ToString();
 
     //        _kaynak_tel_maliyet.Text = (Cf(_sicranti_dahil_harcanacak_tel.Text)*Cf(_kaynak_tel_kg_fiyat.Text)).ToString();
     //        _karisim_gaz_maliyet.Text = (Cf(_kullanilacak_gaz_lt.Text)*Cf(_kaynak_gaz_lt_fiyat.Text)).ToString();
