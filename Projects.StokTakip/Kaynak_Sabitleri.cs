@@ -84,7 +84,6 @@ namespace Projects.StokTakip
         private void hacim_EditValueChanged(object sender, EventArgs e)
         {
           kaynakagirlik.EditValue=  agirlik_hesap(hacim.Text);
-            textEdit1.Text = agirlik_hesap(hacim.Text).ToString();
         }
 
         private void kaynaktelcap_EditValueChanged(object sender, EventArgs e)
